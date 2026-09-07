@@ -1,990 +1,990 @@
-/* =====================================================
-   RESET
-===================================================== */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  background: #ffffff;
-  color: #111111;
-  font-family: Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
-}
-
-main {
-  width: 100%;
-}
-
-
-/* =====================================================
-   SCROLL OFFSET
-===================================================== */
-
-#portfolio,
-#services,
-#about,
-#contact {
-  scroll-margin-top: 90px;
-}
-
-
-/* =====================================================
-   NAVBAR
-===================================================== */
-
-.navbar {
-  width: 100%;
-  height: 80px;
-  padding: 0 7%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #ffffff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  border-bottom: 1px solid #eeeeee;
-}
-
-
-/* =====================================================
-   LOGO
-===================================================== */
-
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  font-size: 26px;
-  font-weight: 800;
-  color: #111111;
-  letter-spacing: -1px;
-}
-
-.logo span {
-  background: linear-gradient(
-    90deg,
-    #ff4ecd,
-    #8b5cf6,
-    #4f9cff
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-
-/* =====================================================
-   NAV LINKS
-===================================================== */
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 38px;
-  list-style: none;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #111111;
-  font-size: 15px;
-  font-weight: 600;
-  position: relative;
-  transition: 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #8b5cf6;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -7px;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    #ff4ecd,
-    #8b5cf6,
-    #4f9cff
-  );
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-
-/* =====================================================
-   NAV BUTTON
-===================================================== */
-
-.nav-button {
-  border: none;
-  outline: none;
-  padding: 12px 22px;
-  border-radius: 30px;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  background: linear-gradient(
-    135deg,
-    #ff4ecd,
-    #8b5cf6,
-    #4f9cff
-  );
-  transition: 0.3s ease;
-}
-
-.nav-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.25);
-}
-
-
-/* =====================================================
-   MOBILE MENU BUTTON
-===================================================== */
-
-.menu-button {
-  display: none;
-  width: 42px;
-  height: 42px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  position: relative;
-  z-index: 1100;
-}
-
-.menu-button span {
-  display: block;
-  width: 25px;
-  height: 2px;
-  margin: 5px auto;
-  background: #111111;
-  transition: 0.3s ease;
-}
-
-.menu-button.active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.menu-button.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-button.active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-
-/* =====================================================
-   MOBILE MENU
-===================================================== */
-
-.mobile-menu {
-  display: none;
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero {
-  width: 100%;
-  min-height: 100vh;
-  padding: 140px 8% 100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 70px;
-  background: #ffffff;
-}
-
-.hero-content {
-  width: 52%;
-  max-width: 700px;
-}
-
-.hero-subtitle,
-.section-subtitle {
-  margin-bottom: 18px;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: #8b5cf6;
-}
-
-.hero h1 {
-  font-size: clamp(50px, 6vw, 88px);
-  line-height: 0.98;
-  letter-spacing: -4px;
-  font-weight: 800;
-  color: #111111;
-  margin-bottom: 30px;
-}
-
-.hero h1 span,
-.portfolio-title h2 span,
-.services-preview h2 span,
-.about-section h2 span,
-.contact-section h2 span {
-  background: linear-gradient(
-    90deg,
-    #ff4ecd,
-    #8b5cf6,
-    #4f9cff
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero-description {
-  max-width: 590px;
-  font-size: 18px;
-  line-height: 1.7;
-  color: #666666;
-  margin-bottom: 35px;
-}
-
-
-/* =====================================================
-   HERO BUTTONS
-===================================================== */
-
-.hero-buttons {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.primary-button,
-.secondary-button {
-  padding: 15px 25px;
-  border-radius: 30px;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.primary-button {
-  border: none;
-  color: #ffffff;
-  background: linear-gradient(
-    135deg,
-    #ff4ecd,
-    #8b5cf6,
-    #4f9cff
-  );
-}
-
-.primary-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.25);
-}
-
-.secondary-button {
-  border: 1px solid #dddddd;
-  color: #111111;
-  background: #ffffff;
-}
-
-.secondary-button:hover {
-  border-color: #8b5cf6;
-  color: #8b5cf6;
-}
-
-
-/* =====================================================
-   HERO IMAGE
-===================================================== */
-
-.hero-visual {
-  width: 45%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-image {
-  width: 100%;
-  max-width: 550px;
-  height: auto;
-  display: block;
-  border-radius: 30px;
-  object-fit: cover;
-}
-
-
-/* =====================================================
-   PORTFOLIO
-===================================================== */
-
-.portfolio-section {
-  width: 100%;
-  padding: 110px 8% 120px;
-  background: #ffffff;
-  position: relative;
-  overflow: hidden;
-}
-
-.portfolio-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 40px;
-  margin-bottom: 50px;
-}
-
-.portfolio-title {
-  max-width: 750px;
-}
-
-.portfolio-title h2 {
-  font-size: clamp(40px, 5vw, 68px);
-  line-height: 1.05;
-  letter-spacing: -3px;
-  margin-bottom: 20px;
-  color: #111111;
-}
-
-.portfolio-description {
-  max-width: 600px;
-  font-size: 17px;
-  line-height: 1.7;
-  color: #777777;
-}
-
-
-/* =====================================================
-   PORTFOLIO CONTROLS
-===================================================== */
-
-.portfolio-controls {
-  display: flex;
-  gap: 10px;
-}
-
-.portfolio-control {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 1px solid #dddddd;
-  background: #ffffff;
-  color: #111111;
-  font-size: 20px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.portfolio-control:hover {
-  color: #ffffff;
-  border-color: transparent;
-  background: linear-gradient(
-    135deg,
-    #ff4ecd,
-    #8b5cf6,
-    #4f9cff
-  );
-}
-
-
-/* =====================================================
-   PORTFOLIO GRID
-===================================================== */
-
-.portfolio-grid {
-  display: flex;
-  gap: 25px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  padding-bottom: 15px;
-}
-
-.portfolio-grid::-webkit-scrollbar {
-  display: none;
-}
-
-
-/* =====================================================
-   PORTFOLIO CARD
-===================================================== */
-
-.portfolio-card {
-  min-width: 350px;
-  max-width: 350px;
-  border-radius: 25px;
-  overflow: hidden;
-  background: #ffffff;
-  border: 1px solid #eeeeee;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
-  transition: 0.35s ease;
-}
-
-.portfolio-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
-}
-
-
-/* =====================================================
-   PORTFOLIO IMAGE
-===================================================== */
-
-.portfolio-image {
-  width: 100%;
-  height: 260px;
-  overflow: hidden;
-  position: relative;
-}
-
-.portfolio-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-.portfolio-card:hover .portfolio-image img {
-  transform: scale(1.06);
-}
-
-
-/* =====================================================
-   PORTFOLIO CONTENT
-===================================================== */
-
-.portfolio-content {
-  min-height: 150px;
-  padding: 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 15px;
-}
-
-.portfolio-content h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #111111;
-}
-
-.portfolio-content p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #777777;
-}
-
-.portfolio-arrow {
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  color: #ffffff;
-  background: linear-gradient(
-    135deg,
-    #ff4ecd,
-    #8b5cf6,
-    #4f9cff
-  );
-  font-size: 18px;
-}
-
-
-/* =====================================================
-   SERVICES
-===================================================== */
-
-.services-preview {
-  width: 100%;
-  padding: 110px 8% 120px;
-  background: #fafafa;
-  text-align: center;
-}
-
-.services-preview h2 {
-  max-width: 850px;
-  margin: 0 auto 55px;
-  font-size: clamp(40px, 5vw, 65px);
-  line-height: 1.05;
-  letter-spacing: -3px;
-}
-
-.services-grid {
-  max-width: 1250px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.service-card {
-  padding: 35px 30px;
-  border-radius: 25px;
-  background: #ffffff;
-  border: 1px solid #eeeeee;
-  text-align: left;
-  cursor: pointer;
-  transition: 0.35s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-8px);
-  border-color: #d8c8ff;
-  box-shadow: 0 20px 50px rgba(139, 92, 246, 0.12);
-}
-
-.service-icon {
-  width: 65px;
-  height: 65px;
-  margin-bottom: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 18px;
-  font-size: 30px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 78, 205, 0.12),
-    rgba(139, 92, 246, 0.12),
-    rgba(79, 156, 255, 0.12)
-  );
-}
-
-.service-card h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
-}
-
-.service-card p {
-  font-size: 15px;
-  line-height: 1.7;
-  color: #777777;
-  margin-bottom: 25px;
-}
-
-.service-card button {
-  border: none;
-  background: transparent;
-  padding: 0;
-  color: #8b5cf6;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-
-/* =====================================================
-   ABOUT
-===================================================== */
-
-.about-section {
-  width: 100%;
-  padding: 120px 8%;
-  background: #ffffff;
-  text-align: center;
-}
-
-.about-section h2 {
-  font-size: clamp(40px, 5vw, 65px);
-  line-height: 1.05;
-  letter-spacing: -3px;
-  margin-bottom: 30px;
-}
-
-.about-description {
-  max-width: 800px;
-  margin: 0 auto 25px;
-  font-size: 18px;
-  line-height: 1.8;
-  color: #666666;
-}
-
-.about-description strong {
-  color: #111111;
-}
-
-.about-slogan {
-  font-size: 16px;
-  font-weight: 700;
-  color: #8b5cf6;
-}
-
-
-/* =====================================================
-   CONTACT
-===================================================== */
-
-.contact-section {
-  width: 100%;
-  padding: 110px 8% 120px;
-  background: #fafafa;
-  text-align: center;
-}
-
-.contact-section h2 {
-  font-size: clamp(40px, 5vw, 65px);
-  line-height: 1.05;
-  letter-spacing: -3px;
-  margin-bottom: 25px;
-}
-
-.contact-description {
-  max-width: 650px;
-  margin: 0 auto 60px;
-  font-size: 17px;
-  line-height: 1.7;
-  color: #777777;
-}
-
-.contact-info {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-}
-
-.contact-item {
-  padding: 30px 15px;
-  background: #ffffff;
-  border-radius: 22px;
-  border: 1px solid #eeeeee;
-  transition: 0.3s ease;
-}
-
-.contact-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
-}
-
-.contact-icon {
-  font-size: 40px;
-  margin-bottom: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 45px;
-  color: #8b5cf6;
-}
-
-.contact-item h3 {
-  font-size: 17px;
-  margin-bottom: 10px;
-}
-
-.contact-item a {
-  color: #777777;
-  font-size: 13px;
-  text-decoration: none;
-  word-break: break-word;
-}
-
-.contact-item a:hover {
-  color: #8b5cf6;
-}
-
-
-/* =====================================================
-   EMAIL ICON - AGRANDI
-===================================================== */
-
-.email-icon {
-  font-size: 50px;
-  margin-bottom: 15px;
-}
-
-
-/* =====================================================
+/* ===================================================== 
+   RESET 
+===================================================== */ 
+ 
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+} 
+ 
+html { 
+  scroll-behavior: smooth; 
+} 
+ 
+body { 
+  margin: 0; 
+  background: #ffffff; 
+  color: #111111; 
+  font-family: Arial, Helvetica, sans-serif; 
+  overflow-x: hidden; 
+} 
+ 
+main { 
+  width: 100%; 
+} 
+ 
+ 
+/* ===================================================== 
+   SCROLL OFFSET 
+===================================================== */ 
+ 
+#portfolio, 
+#services, 
+#about, 
+#contact { 
+  scroll-margin-top: 90px; 
+} 
+ 
+ 
+/* ===================================================== 
+   NAVBAR 
+===================================================== */ 
+ 
+.navbar { 
+  width: 100%; 
+  height: 80px; 
+  padding: 0 7%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  background: #ffffff; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  z-index: 1000; 
+  border-bottom: 1px solid #eeeeee; 
+} 
+ 
+ 
+/* ===================================================== 
+   LOGO 
+===================================================== */ 
+ 
+.logo { 
+  display: flex; 
+  align-items: center; 
+  text-decoration: none; 
+  font-size: 26px; 
+  font-weight: 800; 
+  color: #111111; 
+  letter-spacing: -1px; 
+} 
+ 
+.logo span { 
+  background: linear-gradient( 
+    90deg, 
+    #ff4ecd, 
+    #8b5cf6, 
+    #4f9cff 
+  ); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+} 
+ 
+ 
+/* ===================================================== 
+   NAV LINKS 
+===================================================== */ 
+ 
+.nav-links { 
+  display: flex; 
+  align-items: center; 
+  gap: 38px; 
+  list-style: none; 
+} 
+ 
+.nav-links a { 
+  text-decoration: none; 
+  color: #111111; 
+  font-size: 15px; 
+  font-weight: 600; 
+  position: relative; 
+  transition: 0.3s ease; 
+} 
+ 
+.nav-links a:hover { 
+  color: #8b5cf6; 
+} 
+ 
+.nav-links a::after { 
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  bottom: -7px; 
+  width: 0; 
+  height: 2px; 
+  background: linear-gradient( 
+    90deg, 
+    #ff4ecd, 
+    #8b5cf6, 
+    #4f9cff 
+  ); 
+  transition: width 0.3s ease; 
+} 
+ 
+.nav-links a:hover::after { 
+  width: 100%; 
+} 
+ 
+ 
+/* ===================================================== 
+   NAV BUTTON 
+===================================================== */ 
+ 
+.nav-button { 
+  border: none; 
+  outline: none; 
+  padding: 12px 22px; 
+  border-radius: 30px; 
+  color: #ffffff; 
+  font-size: 14px; 
+  font-weight: 700; 
+  cursor: pointer; 
+  background: linear-gradient( 
+    135deg, 
+    #ff4ecd, 
+    #8b5cf6, 
+    #4f9cff 
+  ); 
+  transition: 0.3s ease; 
+} 
+ 
+.nav-button:hover { 
+  transform: translateY(-2px); 
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.25); 
+} 
+ 
+ 
+/* ===================================================== 
+   MOBILE MENU BUTTON 
+===================================================== */ 
+ 
+.menu-button { 
+  display: none; 
+  width: 42px; 
+  height: 42px; 
+  border: none; 
+  background: transparent; 
+  cursor: pointer; 
+  position: relative; 
+  z-index: 1100; 
+} 
+ 
+.menu-button span { 
+  display: block; 
+  width: 25px; 
+  height: 2px; 
+  margin: 5px auto; 
+  background: #111111; 
+  transition: 0.3s ease; 
+} 
+ 
+.menu-button.active span:nth-child(1) { 
+  transform: translateY(7px) rotate(45deg); 
+} 
+ 
+.menu-button.active span:nth-child(2) { 
+  opacity: 0; 
+} 
+ 
+.menu-button.active span:nth-child(3) { 
+  transform: translateY(-7px) rotate(-45deg); 
+} 
+ 
+ 
+/* ===================================================== 
+   MOBILE MENU 
+===================================================== */ 
+ 
+.mobile-menu { 
+  display: none; 
+} 
+ 
+ 
+/* ===================================================== 
+   HERO 
+===================================================== */ 
+ 
+.hero { 
+  width: 100%; 
+  min-height: 100vh; 
+  padding: 140px 8% 100px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 70px; 
+  background: #ffffff; 
+} 
+ 
+.hero-content { 
+  width: 52%; 
+  max-width: 700px; 
+} 
+ 
+.hero-subtitle, 
+.section-subtitle { 
+  margin-bottom: 18px; 
+  font-size: 13px; 
+  font-weight: 800; 
+  letter-spacing: 2px; 
+  color: #8b5cf6; 
+} 
+ 
+.hero h1 { 
+  font-size: clamp(50px, 6vw, 88px); 
+  line-height: 0.98; 
+  letter-spacing: -4px; 
+  font-weight: 800; 
+  color: #111111; 
+  margin-bottom: 30px; 
+} 
+ 
+.hero h1 span, 
+.portfolio-title h2 span, 
+.services-preview h2 span, 
+.about-section h2 span, 
+.contact-section h2 span { 
+  background: linear-gradient( 
+    90deg, 
+    #ff4ecd, 
+    #8b5cf6, 
+    #4f9cff 
+  ); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+} 
+ 
+.hero-description { 
+  max-width: 590px; 
+  font-size: 18px; 
+  line-height: 1.7; 
+  color: #666666; 
+  margin-bottom: 35px; 
+} 
+ 
+ 
+/* ===================================================== 
+   HERO BUTTONS 
+===================================================== */ 
+ 
+.hero-buttons { 
+  display: flex; 
+  align-items: center; 
+  gap: 15px; 
+} 
+ 
+.primary-button, 
+.secondary-button { 
+  padding: 15px 25px; 
+  border-radius: 30px; 
+  font-size: 15px; 
+  font-weight: 700; 
+  cursor: pointer; 
+  transition: 0.3s ease; 
+} 
+ 
+.primary-button { 
+  border: none; 
+  color: #ffffff; 
+  background: linear-gradient( 
+    135deg, 
+    #ff4ecd, 
+    #8b5cf6, 
+    #4f9cff 
+  ); 
+} 
+ 
+.primary-button:hover { 
+  transform: translateY(-3px); 
+  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.25); 
+} 
+ 
+.secondary-button { 
+  border: 1px solid #dddddd; 
+  color: #111111; 
+  background: #ffffff; 
+} 
+ 
+.secondary-button:hover { 
+  border-color: #8b5cf6; 
+  color: #8b5cf6; 
+} 
+ 
+ 
+/* ===================================================== 
+   HERO IMAGE 
+===================================================== */ 
+ 
+.hero-visual { 
+  width: 45%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+} 
+ 
+.hero-image { 
+  width: 100%; 
+  max-width: 550px; 
+  height: auto; 
+  display: block; 
+  border-radius: 30px; 
+  object-fit: cover; 
+} 
+ 
+ 
+/* ===================================================== 
+   PORTFOLIO 
+===================================================== */ 
+ 
+.portfolio-section { 
+  width: 100%; 
+  padding: 110px 8% 120px; 
+  background: #ffffff; 
+  position: relative; 
+  overflow: hidden; 
+} 
+ 
+.portfolio-header { 
+  display: flex; 
+  align-items: flex-end; 
+  justify-content: space-between; 
+  gap: 40px; 
+  margin-bottom: 50px; 
+} 
+ 
+.portfolio-title { 
+  max-width: 750px; 
+} 
+ 
+.portfolio-title h2 { 
+  font-size: clamp(40px, 5vw, 68px); 
+  line-height: 1.05; 
+  letter-spacing: -3px; 
+  margin-bottom: 20px; 
+  color: #111111; 
+} 
+ 
+.portfolio-description { 
+  max-width: 600px; 
+  font-size: 17px; 
+  line-height: 1.7; 
+  color: #777777; 
+} 
+ 
+ 
+/* ===================================================== 
+   PORTFOLIO CONTROLS 
+===================================================== */ 
+ 
+.portfolio-controls { 
+  display: flex; 
+  gap: 10px; 
+} 
+ 
+.portfolio-control { 
+  width: 48px; 
+  height: 48px; 
+  border-radius: 50%; 
+  border: 1px solid #dddddd; 
+  background: #ffffff; 
+  color: #111111; 
+  font-size: 20px; 
+  cursor: pointer; 
+  transition: 0.3s ease; 
+} 
+ 
+.portfolio-control:hover { 
+  color: #ffffff; 
+  border-color: transparent; 
+  background: linear-gradient( 
+    135deg, 
+    #ff4ecd, 
+    #8b5cf6, 
+    #4f9cff 
+  ); 
+} 
+ 
+ 
+/* ===================================================== 
+   PORTFOLIO GRID 
+===================================================== */ 
+ 
+.portfolio-grid { 
+  display: flex; 
+  gap: 25px; 
+  overflow-x: auto; 
+  scroll-behavior: smooth; 
+  scrollbar-width: none; 
+  padding-bottom: 15px; 
+} 
+ 
+.portfolio-grid::-webkit-scrollbar { 
+  display: none; 
+} 
+ 
+ 
+/* ===================================================== 
+   PORTFOLIO CARD 
+===================================================== */ 
+ 
+.portfolio-card { 
+  min-width: 350px; 
+  max-width: 350px; 
+  border-radius: 25px; 
+  overflow: hidden; 
+  background: #ffffff; 
+  border: 1px solid #eeeeee; 
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06); 
+  transition: 0.35s ease; 
+} 
+ 
+.portfolio-card:hover { 
+  transform: translateY(-8px); 
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1); 
+} 
+ 
+ 
+/* ===================================================== 
+   PORTFOLIO IMAGE 
+===================================================== */ 
+ 
+.portfolio-image { 
+  width: 100%; 
+  height: 260px; 
+  overflow: hidden; 
+  position: relative; 
+} 
+ 
+.portfolio-image img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  display: block; 
+  transition: transform 0.5s ease; 
+} 
+ 
+.portfolio-card:hover .portfolio-image img { 
+  transform: scale(1.06); 
+} 
+ 
+ 
+/* ===================================================== 
+   PORTFOLIO CONTENT 
+===================================================== */ 
+ 
+.portfolio-content { 
+  min-height: 150px; 
+  padding: 25px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: flex-start; 
+  gap: 15px; 
+} 
+ 
+.portfolio-content h3 { 
+  font-size: 20px; 
+  margin-bottom: 10px; 
+  color: #111111; 
+} 
+ 
+.portfolio-content p { 
+  font-size: 14px; 
+  line-height: 1.6; 
+  color: #777777; 
+} 
+ 
+.portfolio-arrow { 
+  width: 40px; 
+  height: 40px; 
+  flex-shrink: 0; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 50%; 
+  color: #ffffff; 
+  background: linear-gradient( 
+    135deg, 
+    #ff4ecd, 
+    #8b5cf6, 
+    #4f9cff 
+  ); 
+  font-size: 18px; 
+} 
+ 
+ 
+/* ===================================================== 
+   SERVICES 
+===================================================== */ 
+ 
+.services-preview { 
+  width: 100%; 
+  padding: 110px 8% 120px; 
+  background: #fafafa; 
+  text-align: center; 
+} 
+ 
+.services-preview h2 { 
+  max-width: 850px; 
+  margin: 0 auto 55px; 
+  font-size: clamp(40px, 5vw, 65px); 
+  line-height: 1.05; 
+  letter-spacing: -3px; 
+} 
+ 
+.services-grid { 
+  max-width: 1250px; 
+  margin: 0 auto; 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 25px; 
+} 
+ 
+.service-card { 
+  padding: 35px 30px; 
+  border-radius: 25px; 
+  background: #ffffff; 
+  border: 1px solid #eeeeee; 
+  text-align: left; 
+  cursor: pointer; 
+  transition: 0.35s ease; 
+} 
+ 
+.service-card:hover { 
+  transform: translateY(-8px); 
+  border-color: #d8c8ff; 
+  box-shadow: 0 20px 50px rgba(139, 92, 246, 0.12); 
+} 
+ 
+.service-icon { 
+  width: 65px; 
+  height: 65px; 
+  margin-bottom: 25px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 18px; 
+  font-size: 30px; 
+  background: linear-gradient( 
+    135deg, 
+    rgba(255, 78, 205, 0.12), 
+    rgba(139, 92, 246, 0.12), 
+    rgba(79, 156, 255, 0.12) 
+  ); 
+} 
+ 
+.service-card h3 { 
+  font-size: 22px; 
+  margin-bottom: 15px; 
+} 
+ 
+.service-card p { 
+  font-size: 15px; 
+  line-height: 1.7; 
+  color: #777777; 
+  margin-bottom: 25px; 
+} 
+ 
+.service-card button { 
+  border: none; 
+  background: transparent; 
+  padding: 0; 
+  color: #8b5cf6; 
+  font-size: 15px; 
+  font-weight: 700; 
+  cursor: pointer; 
+} 
+ 
+ 
+/* ===================================================== 
+   ABOUT 
+===================================================== */ 
+ 
+.about-section { 
+  width: 100%; 
+  padding: 120px 8%; 
+  background: #ffffff; 
+  text-align: center; 
+} 
+ 
+.about-section h2 { 
+  font-size: clamp(40px, 5vw, 65px); 
+  line-height: 1.05; 
+  letter-spacing: -3px; 
+  margin-bottom: 30px; 
+} 
+ 
+.about-description { 
+  max-width: 800px; 
+  margin: 0 auto 25px; 
+  font-size: 18px; 
+  line-height: 1.8; 
+  color: #666666; 
+} 
+ 
+.about-description strong { 
+  color: #111111; 
+} 
+ 
+.about-slogan { 
+  font-size: 16px; 
+  font-weight: 700; 
+  color: #8b5cf6; 
+} 
+ 
+ 
+/* ===================================================== 
+   CONTACT 
+===================================================== */ 
+ 
+.contact-section { 
+  width: 100%; 
+  padding: 110px 8% 120px; 
+  background: #fafafa; 
+  text-align: center; 
+} 
+ 
+.contact-section h2 { 
+  font-size: clamp(40px, 5vw, 65px); 
+  line-height: 1.05; 
+  letter-spacing: -3px; 
+  margin-bottom: 25px; 
+} 
+ 
+.contact-description { 
+  max-width: 650px; 
+  margin: 0 auto 60px; 
+  font-size: 17px; 
+  line-height: 1.7; 
+  color: #777777; 
+} 
+ 
+.contact-info { 
+  max-width: 1100px; 
+  margin: 0 auto; 
+  display: grid; 
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 20px; 
+} 
+ 
+.contact-item { 
+  padding: 30px 15px; 
+  background: #ffffff; 
+  border-radius: 22px; 
+  border: 1px solid #eeeeee; 
+  transition: 0.3s ease; 
+} 
+ 
+.contact-item:hover { 
+  transform: translateY(-6px); 
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07); 
+} 
+ 
+.contact-icon { 
+  font-size: 40px; 
+  margin-bottom: 15px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 45px; 
+  color: #8b5cf6; 
+} 
+ 
+.contact-item h3 { 
+  font-size: 17px; 
+  margin-bottom: 10px; 
+} 
+ 
+.contact-item a { 
+  color: #777777; 
+  font-size: 13px; 
+  text-decoration: none; 
+  word-break: break-word; 
+} 
+ 
+.contact-item a:hover { 
+  color: #8b5cf6; 
+} 
+ 
+ 
+/* ===================================================== 
+   EMAIL ICON - DESKTOP
+===================================================== */ 
+ 
+.email-icon { 
+  font-size: 50px; 
+  margin-bottom: 15px; 
+} 
+ 
+ 
+/* ===================================================== 
    TABLET
-===================================================== */
-
-@media (max-width: 1100px) {
-
-  .navbar {
-    padding: 0 5%;
-  }
-
-  .hero {
-    padding-left: 6%;
-    padding-right: 6%;
-    gap: 40px;
-  }
-
-  .hero-content {
-    width: 55%;
-  }
-
-  .hero-visual {
-    width: 45%;
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .contact-info {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 768px) {
-
-  /* NAVBAR */
-
-  .navbar {
-    height: 70px;
-    padding: 0 6%;
-  }
-
-  .nav-links,
-  .nav-button {
-    display: none;
-  }
-
-  .menu-button {
-    display: block;
-  }
-
-  .mobile-menu {
-    display: flex;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
-    padding: 40px 8%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 25px;
-    background: #ffffff;
-    z-index: 999;
-    transform: translateX(100%);
-    transition: transform 0.35s ease;
-  }
-
-  .mobile-menu.open {
-    transform: translateX(0);
-  }
-
-  .mobile-menu a {
-    color: #111111;
-    text-decoration: none;
-    font-size: 25px;
-    font-weight: 700;
-  }
-
-  .mobile-menu a:hover {
-    color: #8b5cf6;
-  }
-
-
-  /* HERO */
-
-  .hero {
-    min-height: auto;
-    padding: 120px 7% 80px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 45px;
-  }
-
-  .hero-content,
-  .hero-visual {
-    width: 100%;
-  }
-
-  .hero h1 {
-    font-size: clamp(45px, 12vw, 65px);
-    letter-spacing: -3px;
-  }
-
-  .hero-description {
-    font-size: 16px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .primary-button,
-  .secondary-button {
-    width: 100%;
-    text-align: center;
-  }
-
-  .hero-visual {
-    justify-content: center;
-  }
-
-  .hero-image {
-    max-width: 100%;
-    border-radius: 25px;
-  }
-
-
-  /* PORTFOLIO */
-
-  .portfolio-section {
-    padding: 80px 7% 90px;
-  }
-
-  .portfolio-header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  .portfolio-title h2 {
-    font-size: clamp(38px, 10vw, 55px);
-    letter-spacing: -2px;
-  }
-
-  .portfolio-description {
-    font-size: 15px;
-  }
-
-  .portfolio-card {
-    min-width: 290px;
-    max-width: 290px;
-  }
-
-  .portfolio-image {
-    height: 220px;
-  }
-
-
-  /* SERVICES */
-
-  .services-preview {
-    padding: 80px 7% 90px;
-  }
-
-  .services-preview h2 {
-    font-size: clamp(38px, 10vw, 55px);
-    letter-spacing: -2px;
-    margin-bottom: 40px;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  /* ABOUT */
-
-  .about-section {
-    padding: 90px 7%;
-  }
-
-  .about-section h2 {
-    font-size: clamp(38px, 10vw, 55px);
-    letter-spacing: -2px;
-  }
-
-  .about-description {
-    font-size: 16px;
-  }
-
-
-  /* CONTACT */
-
-  .contact-section {
-    padding: 80px 7% 90px;
-  }
-
-  .contact-section h2 {
-    font-size: clamp(38px, 10vw, 55px);
-    letter-spacing: -2px;
-  }
-
-  .contact-description {
-    font-size: 15px;
-    margin-bottom: 45px;
-  }
-
-  .contact-info {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .contact-item {
-    padding: 25px 12px;
-  }
-
-  .contact-icon {
-    font-size: 40px;
-  }
-
-  /* EMAIL AGRANDI SUR MOBILE */
-
-  .email-icon {
-    font-size: 38px !important;
-    margin-bottom: 20px !important;
-  }
-}
-
-
-/* =====================================================
-   VERY SMALL PHONES
-===================================================== */
-
-@media (max-width: 380px) {
-
-  .logo {
-    font-size: 23px;
-  }
-
-  .hero {
-    padding-left: 6%;
-    padding-right: 6%;
-  }
-
-  .hero h1 {
-    font-size: 42px;
-  }
-
-  .portfolio-card {
-    min-width: 270px;
-    max-width: 270px;
-  }
-
-  .contact-info {
-    grid-template-columns: 1fr;
-  }
-
-  /* EMAIL ICON */
-
-  .email-icon {
-    font-size: 35px !important;
-    margin-bottom: 20px !important;
-  }
+===================================================== */ 
+ 
+@media (max-width: 1100px) { 
+ 
+  .navbar { 
+    padding: 0 5%; 
+  } 
+ 
+  .hero { 
+    padding-left: 6%; 
+    padding-right: 6%; 
+    gap: 40px; 
+  } 
+ 
+  .hero-content { 
+    width: 55%; 
+  } 
+ 
+  .hero-visual { 
+    width: 45%; 
+  } 
+ 
+  .services-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  } 
+ 
+  .contact-info { 
+    grid-template-columns: repeat(3, 1fr); 
+  } 
+} 
+ 
+ 
+/* ===================================================== 
+   MOBILE 
+===================================================== */ 
+ 
+@media (max-width: 768px) { 
+ 
+  /* NAVBAR */ 
+ 
+  .navbar { 
+    height: 70px; 
+    padding: 0 6%; 
+  } 
+ 
+  .nav-links, 
+  .nav-button { 
+    display: none; 
+  } 
+ 
+  .menu-button { 
+    display: block; 
+  } 
+ 
+  .mobile-menu { 
+    display: flex; 
+    position: fixed; 
+    top: 70px; 
+    left: 0; 
+    width: 100%; 
+    height: calc(100vh - 70px); 
+    padding: 40px 8%; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 25px; 
+    background: #ffffff; 
+    z-index: 999; 
+    transform: translateX(100%); 
+    transition: transform 0.35s ease; 
+  } 
+ 
+  .mobile-menu.open { 
+    transform: translateX(0); 
+  } 
+ 
+  .mobile-menu a { 
+    color: #111111; 
+    text-decoration: none; 
+    font-size: 25px; 
+    font-weight: 700; 
+  } 
+ 
+  .mobile-menu a:hover { 
+    color: #8b5cf6; 
+  } 
+ 
+ 
+  /* HERO */ 
+ 
+  .hero { 
+    min-height: auto; 
+    padding: 120px 7% 80px; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 45px; 
+  } 
+ 
+  .hero-content, 
+  .hero-visual { 
+    width: 100%; 
+  } 
+ 
+  .hero h1 { 
+    font-size: clamp(45px, 12vw, 65px); 
+    letter-spacing: -3px; 
+  } 
+ 
+  .hero-description { 
+    font-size: 16px; 
+  } 
+ 
+  .hero-buttons { 
+    flex-direction: column; 
+    align-items: stretch; 
+  } 
+ 
+  .primary-button, 
+  .secondary-button { 
+    width: 100%; 
+    text-align: center; 
+  } 
+ 
+  .hero-visual { 
+    justify-content: center; 
+  } 
+ 
+  .hero-image { 
+    max-width: 100%; 
+    border-radius: 25px; 
+  } 
+ 
+ 
+  /* PORTFOLIO */ 
+ 
+  .portfolio-section { 
+    padding: 80px 7% 90px; 
+  } 
+ 
+  .portfolio-header { 
+    align-items: flex-start; 
+    flex-direction: column; 
+    gap: 25px; 
+  } 
+ 
+  .portfolio-title h2 { 
+    font-size: clamp(38px, 10vw, 55px); 
+    letter-spacing: -2px; 
+  } 
+ 
+  .portfolio-description { 
+    font-size: 15px; 
+  } 
+ 
+  .portfolio-card { 
+    min-width: 290px; 
+    max-width: 290px; 
+  } 
+ 
+  .portfolio-image { 
+    height: 220px; 
+  } 
+ 
+ 
+  /* SERVICES */ 
+ 
+  .services-preview { 
+    padding: 80px 7% 90px; 
+  } 
+ 
+  .services-preview h2 { 
+    font-size: clamp(38px, 10vw, 55px); 
+    letter-spacing: -2px; 
+    margin-bottom: 40px; 
+  } 
+ 
+  .services-grid { 
+    grid-template-columns: 1fr; 
+  } 
+ 
+ 
+  /* ABOUT */ 
+ 
+  .about-section { 
+    padding: 90px 7%; 
+  } 
+ 
+  .about-section h2 { 
+    font-size: clamp(38px, 10vw, 55px); 
+    letter-spacing: -2px; 
+  } 
+ 
+  .about-description { 
+    font-size: 16px; 
+  } 
+ 
+ 
+  /* CONTACT */ 
+ 
+  .contact-section { 
+    padding: 80px 7% 90px; 
+  } 
+ 
+  .contact-section h2 { 
+    font-size: clamp(38px, 10vw, 55px); 
+    letter-spacing: -2px; 
+  } 
+ 
+  .contact-description { 
+    font-size: 15px; 
+    margin-bottom: 45px; 
+  } 
+ 
+  .contact-info { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px; 
+  } 
+ 
+  .contact-item { 
+    padding: 25px 12px; 
+  } 
+ 
+  .contact-icon { 
+    font-size: 40px; 
+  } 
+ 
+  /* EMAIL AGRANDI SUR MOBILE */ 
+ 
+  .email-icon { 
+    font-size: 42px !important; 
+    margin-bottom: 20px !important; 
+  } 
+} 
+ 
+ 
+/* ===================================================== 
+   VERY SMALL PHONES 
+===================================================== */ 
+ 
+@media (max-width: 380px) { 
+ 
+  .logo { 
+    font-size: 23px; 
+  } 
+ 
+  .hero { 
+    padding-left: 6%; 
+    padding-right: 6%; 
+  } 
+ 
+  .hero h1 { 
+    font-size: 42px; 
+  } 
+ 
+  .portfolio-card { 
+    min-width: 270px; 
+    max-width: 270px; 
+  } 
+ 
+  .contact-info { 
+    grid-template-columns: 1fr; 
+  } 
+ 
+  /* EMAIL ICON */ 
+ 
+  .email-icon { 
+    font-size: 39px !important; 
+    margin-bottom: 20px !important; 
+  } 
 }
