@@ -80,10 +80,40 @@ function Accueil() {
   }, [location.search]);
 
 
+  /* =====================================================
+     DÉFILEMENT PORTFOLIO
+  ===================================================== */
+
+  const scrollPortfolio = (direction) => {
+
+    const container =
+      document.querySelector(".portfolio-grid");
+
+    if (!container) {
+      return;
+    }
+
+    const card =
+      container.querySelector(".portfolio-card");
+
+    const cardWidth = card
+      ? card.offsetWidth + 24
+      : 330;
+
+    container.scrollBy({
+      left:
+        direction === "left"
+          ? -cardWidth
+          : cardWidth,
+      behavior: "smooth"
+    });
+
+  };
+
+
   return (
 
     <main>
-
 
       {/* =================================================
           HERO
@@ -110,8 +140,6 @@ function Accueil() {
 
           <div className="hero-buttons">
 
-            {/* BOUTON SERVICES */}
-
             <button
               className="primary-button"
               onClick={() => {
@@ -136,8 +164,6 @@ function Accueil() {
             </button>
 
 
-            {/* BOUTON CONTACT */}
-
             <button
               className="secondary-button"
               onClick={() =>
@@ -155,7 +181,7 @@ function Accueil() {
 
 
         {/* =================================================
-            PHOTO
+            HERO IMAGE
         ================================================= */}
 
         <div className="hero-visual">
@@ -165,6 +191,312 @@ function Accueil() {
             alt="Créativité Pixlora"
             className="hero-image"
           />
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          PORTFOLIO
+      ===================================================== */}
+
+      <section
+        className="portfolio-section"
+        id="portfolio"
+      >
+
+        {/* =================================================
+            HEADER PORTFOLIO
+        ================================================= */}
+
+        <div className="portfolio-header">
+
+          <div className="portfolio-title">
+
+            <p className="section-subtitle">
+              NOS RÉALISATIONS
+            </p>
+
+            <h2>
+              Des créations qui donnent vie
+              à vos <span>idées.</span>
+            </h2>
+
+            <p className="portfolio-description">
+              Découvrez quelques exemples de contenus
+              créatifs réalisés pour différents projets,
+              marques et activités.
+            </p>
+
+          </div>
+
+
+          {/* =================================================
+              BOUTONS CARROUSEL
+          ================================================= */}
+
+          <div className="portfolio-controls">
+
+            <button
+              className="portfolio-control"
+              onClick={() =>
+                scrollPortfolio("left")
+              }
+              aria-label="Projet précédent"
+            >
+              ←
+            </button>
+
+            <button
+              className="portfolio-control"
+              onClick={() =>
+                scrollPortfolio("right")
+              }
+              aria-label="Projet suivant"
+            >
+              →
+            </button>
+
+          </div>
+
+        </div>
+
+
+        {/* =================================================
+            CARROUSEL PORTFOLIO
+        ================================================= */}
+
+        <div className="portfolio-grid">
+
+
+          {/* =================================================
+              PROJET 1
+          ================================================= */}
+
+          <div className="portfolio-card">
+
+            <div className="portfolio-image">
+
+              <img
+                src={heroPhoto}
+                alt="Vidéo publicitaire"
+              />
+
+            </div>
+
+            <div className="portfolio-content">
+
+              <div>
+
+                <h3>
+                  Vidéo publicitaire
+                </h3>
+
+                <p>
+                  Création de contenu pour marque
+                </p>
+
+              </div>
+
+              <div className="portfolio-arrow">
+                →
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* =================================================
+              PROJET 2
+          ================================================= */}
+
+          <div className="portfolio-card">
+
+            <div className="portfolio-image">
+
+              <img
+                src={heroPhoto}
+                alt="Contenu Instagram"
+              />
+
+            </div>
+
+            <div className="portfolio-content">
+
+              <div>
+
+                <h3>
+                  Contenu Instagram
+                </h3>
+
+                <p>
+                  Vidéo courte et dynamique
+                </p>
+
+              </div>
+
+              <div className="portfolio-arrow">
+                →
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* =================================================
+              PROJET 3
+          ================================================= */}
+
+          <div className="portfolio-card">
+
+            <div className="portfolio-image">
+
+              <img
+                src={heroPhoto}
+                alt="Présentation produit"
+              />
+
+            </div>
+
+            <div className="portfolio-content">
+
+              <div>
+
+                <h3>
+                  Présentation produit
+                </h3>
+
+                <p>
+                  Présentez votre produit autrement
+                </p>
+
+              </div>
+
+              <div className="portfolio-arrow">
+                →
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* =================================================
+              PROJET 4
+          ================================================= */}
+
+          <div className="portfolio-card">
+
+            <div className="portfolio-image">
+
+              <img
+                src={heroPhoto}
+                alt="Vidéo promotionnelle"
+              />
+
+            </div>
+
+            <div className="portfolio-content">
+
+              <div>
+
+                <h3>
+                  Vidéo promotionnelle
+                </h3>
+
+                <p>
+                  Contenu moderne et professionnel
+                </p>
+
+              </div>
+
+              <div className="portfolio-arrow">
+                →
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* =================================================
+              PROJET 5
+          ================================================= */}
+
+          <div className="portfolio-card">
+
+            <div className="portfolio-image">
+
+              <img
+                src={heroPhoto}
+                alt="Contenu TikTok"
+              />
+
+            </div>
+
+            <div className="portfolio-content">
+
+              <div>
+
+                <h3>
+                  Contenu TikTok
+                </h3>
+
+                <p>
+                  Format vertical pour les réseaux
+                </p>
+
+              </div>
+
+              <div className="portfolio-arrow">
+                →
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* =================================================
+              PROJET 6
+          ================================================= */}
+
+          <div className="portfolio-card">
+
+            <div className="portfolio-image">
+
+              <img
+                src={heroPhoto}
+                alt="Création vidéo avec IA"
+              />
+
+            </div>
+
+            <div className="portfolio-content">
+
+              <div>
+
+                <h3>
+                  Création vidéo avec IA
+                </h3>
+
+                <p>
+                  Des contenus créatifs grâce à l'IA
+                </p>
+
+              </div>
+
+              <div className="portfolio-arrow">
+                →
+              </div>
+
+            </div>
+
+          </div>
+
 
         </div>
 
@@ -193,9 +525,7 @@ function Accueil() {
         <div className="services-grid">
 
 
-          {/* =================================================
-              DESIGN GRAPHIQUE
-          ================================================= */}
+          {/* DESIGN GRAPHIQUE */}
 
           <div
             className="service-card"
@@ -237,9 +567,7 @@ function Accueil() {
           </div>
 
 
-          {/* =================================================
-              MONTAGE VIDEO
-          ================================================= */}
+          {/* MONTAGE VIDEO */}
 
           <div
             className="service-card"
@@ -281,9 +609,7 @@ function Accueil() {
           </div>
 
 
-          {/* =================================================
-              CREATION SITE
-          ================================================= */}
+          {/* CREATION SITE */}
 
           <div
             className="service-card"
@@ -324,9 +650,7 @@ function Accueil() {
           </div>
 
 
-          {/* =================================================
-              PRODUIT DIGITAL
-          ================================================= */}
+          {/* PRODUIT DIGITAL */}
 
           <div
             className="service-card"
@@ -367,9 +691,7 @@ function Accueil() {
           </div>
 
 
-          {/* =================================================
-              CREATION IA
-          ================================================= */}
+          {/* CREATION IA */}
 
           <div
             className="service-card"
@@ -490,9 +812,7 @@ function Accueil() {
         <div className="contact-info">
 
 
-          {/* =================================================
-              EMAIL
-          ================================================= */}
+          {/* EMAIL */}
 
           <div
             className="contact-item"
@@ -504,7 +824,7 @@ function Accueil() {
             }}
           >
 
-            <div className="contact-icon">
+            <div className="contact-icon email-icon">
               ✉
             </div>
 
@@ -524,9 +844,7 @@ function Accueil() {
           </div>
 
 
-          {/* =================================================
-              WHATSAPP
-          ================================================= */}
+          {/* WHATSAPP */}
 
           <div
             className="contact-item"
@@ -566,9 +884,7 @@ function Accueil() {
           </div>
 
 
-          {/* =================================================
-              FACEBOOK
-          ================================================= */}
+          {/* FACEBOOK */}
 
           <div
             className="contact-item"
@@ -608,9 +924,7 @@ function Accueil() {
           </div>
 
 
-          {/* =================================================
-              INSTAGRAM
-          ================================================= */}
+          {/* INSTAGRAM */}
 
           <div
             className="contact-item"
@@ -650,9 +964,7 @@ function Accueil() {
           </div>
 
 
-          {/* =================================================
-              TIKTOK
-          ================================================= */}
+          {/* TIKTOK */}
 
           <div
             className="contact-item"
@@ -711,21 +1023,11 @@ function App() {
 
     <>
 
-      {/* NAVBAR */}
-
       <Navbar />
-
-
-      {/* =================================================
-          ROUTES
-      ================================================= */}
 
       <Routes>
 
-
-        {/* =================================================
-            ACCUEIL
-        ================================================= */}
+        {/* ACCUEIL */}
 
         <Route
           path="/"
@@ -735,9 +1037,7 @@ function App() {
         />
 
 
-        {/* =================================================
-            À PROPOS
-        ================================================= */}
+        {/* À PROPOS */}
 
         <Route
           path="/about"
@@ -750,9 +1050,7 @@ function App() {
         />
 
 
-        {/* =================================================
-            SERVICES
-        ================================================= */}
+        {/* SERVICES */}
 
         <Route
           path="/services"
@@ -765,9 +1063,7 @@ function App() {
         />
 
 
-        {/* =================================================
-            CONTACT
-        ================================================= */}
+        {/* CONTACT */}
 
         <Route
           path="/contact"
@@ -780,9 +1076,7 @@ function App() {
         />
 
 
-        {/* =================================================
-            DESIGN GRAPHIQUE
-        ================================================= */}
+        {/* DESIGN GRAPHIQUE */}
 
         <Route
           path="/design-graphique"
@@ -792,9 +1086,7 @@ function App() {
         />
 
 
-        {/* =================================================
-            MONTAGE VIDEO
-        ================================================= */}
+        {/* MONTAGE VIDEO */}
 
         <Route
           path="/montage-video"
@@ -804,9 +1096,7 @@ function App() {
         />
 
 
-        {/* =================================================
-            CREATION SITE
-        ================================================= */}
+        {/* CREATION SITE */}
 
         <Route
           path="/creation-site"
@@ -816,9 +1106,7 @@ function App() {
         />
 
 
-        {/* =================================================
-            PRODUIT DIGITAL
-        ================================================= */}
+        {/* PRODUIT DIGITAL */}
 
         <Route
           path="/produit-digital"
@@ -828,9 +1116,7 @@ function App() {
         />
 
 
-        {/* =================================================
-            CREATION IA
-        ================================================= */}
+        {/* CREATION IA */}
 
         <Route
           path="/creation-ia"
@@ -840,9 +1126,7 @@ function App() {
         />
 
 
-        {/* =================================================
-            FORMULAIRE SERVICE
-        ================================================= */}
+        {/* FORMULAIRE */}
 
         <Route
           path="/formulaire-service"
@@ -852,9 +1136,7 @@ function App() {
         />
 
 
-        {/* =================================================
-            PAGE INEXISTANTE
-        ================================================= */}
+        {/* PAGE INEXISTANTE */}
 
         <Route
           path="*"
