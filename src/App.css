@@ -1461,13 +1461,15 @@ main {
     border-radius: 15px;
   }
 
+  /* TOUS LES ICÔNES CONTACT : MÊME TAILLE */
+
   .contact-icon {
-    font-size: 23px;
+    font-size: 25px;
     margin-bottom: 10px;
   }
 
   /* ===================================================
-     EMAIL MOBILE - CORRECTION
+     EMAIL MOBILE
   =================================================== */
 
   .email-icon {
@@ -1670,6 +1672,13 @@ main {
 
   .contact-section {
     background: #ffffff;
+  }
+
+  /* TOUS LES ICÔNES CONTACT : MÊME TAILLE */
+
+  .contact-icon {
+    font-size: 25px;
+    margin-bottom: 10px;
   }
 
   /* ===================================================
