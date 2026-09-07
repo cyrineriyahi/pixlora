@@ -17,6 +17,8 @@ import {
   faWhatsapp
 } from "@fortawesome/free-brands-svg-icons";
 
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
 import Navbar from "./components/Navbar";
 
 import DesignGraphique from "./DesignGraphique";
@@ -206,10 +208,6 @@ function Accueil() {
         id="portfolio"
       >
 
-        {/* =================================================
-            HEADER PORTFOLIO
-        ================================================= */}
-
         <div className="portfolio-header">
 
           <div className="portfolio-title">
@@ -231,10 +229,6 @@ function Accueil() {
 
           </div>
 
-
-          {/* =================================================
-              BOUTONS CARROUSEL
-          ================================================= */}
 
           <div className="portfolio-controls">
 
@@ -263,16 +257,10 @@ function Accueil() {
         </div>
 
 
-        {/* =================================================
-            CARROUSEL PORTFOLIO
-        ================================================= */}
-
         <div className="portfolio-grid">
 
 
-          {/* =================================================
-              PROJET 1
-          ================================================= */}
+          {/* PROJET 1 */}
 
           <div className="portfolio-card">
 
@@ -308,9 +296,7 @@ function Accueil() {
           </div>
 
 
-          {/* =================================================
-              PROJET 2
-          ================================================= */}
+          {/* PROJET 2 */}
 
           <div className="portfolio-card">
 
@@ -346,9 +332,7 @@ function Accueil() {
           </div>
 
 
-          {/* =================================================
-              PROJET 3
-          ================================================= */}
+          {/* PROJET 3 */}
 
           <div className="portfolio-card">
 
@@ -384,9 +368,7 @@ function Accueil() {
           </div>
 
 
-          {/* =================================================
-              PROJET 4
-          ================================================= */}
+          {/* PROJET 4 */}
 
           <div className="portfolio-card">
 
@@ -422,9 +404,7 @@ function Accueil() {
           </div>
 
 
-          {/* =================================================
-              PROJET 5
-          ================================================= */}
+          {/* PROJET 5 */}
 
           <div className="portfolio-card">
 
@@ -460,9 +440,7 @@ function Accueil() {
           </div>
 
 
-          {/* =================================================
-              PROJET 6
-          ================================================= */}
+          {/* PROJET 6 */}
 
           <div className="portfolio-card">
 
@@ -824,8 +802,12 @@ function Accueil() {
             }}
           >
 
-            <div className="contact-icon email-icon">
-              ✉
+            <div className="contact-icon">
+
+              <FontAwesomeIcon
+                icon={faEnvelope}
+              />
+
             </div>
 
             <h3>
@@ -1003,6 +985,7 @@ function Accueil() {
 
           </div>
 
+
         </div>
 
       </section>
@@ -1027,17 +1010,12 @@ function App() {
 
       <Routes>
 
-        {/* ACCUEIL */}
-
         <Route
           path="/"
           element={
             <Accueil />
           }
         />
-
-
-        {/* À PROPOS */}
 
         <Route
           path="/about"
@@ -1049,9 +1027,6 @@ function App() {
           }
         />
 
-
-        {/* SERVICES */}
-
         <Route
           path="/services"
           element={
@@ -1061,9 +1036,6 @@ function App() {
             />
           }
         />
-
-
-        {/* CONTACT */}
 
         <Route
           path="/contact"
@@ -1075,18 +1047,12 @@ function App() {
           }
         />
 
-
-        {/* DESIGN GRAPHIQUE */}
-
         <Route
           path="/design-graphique"
           element={
             <DesignGraphique />
           }
         />
-
-
-        {/* MONTAGE VIDEO */}
 
         <Route
           path="/montage-video"
@@ -1095,18 +1061,12 @@ function App() {
           }
         />
 
-
-        {/* CREATION SITE */}
-
         <Route
           path="/creation-site"
           element={
             <CreationSite />
           }
         />
-
-
-        {/* PRODUIT DIGITAL */}
 
         <Route
           path="/produit-digital"
@@ -1115,9 +1075,6 @@ function App() {
           }
         />
 
-
-        {/* CREATION IA */}
-
         <Route
           path="/creation-ia"
           element={
@@ -1125,18 +1082,12 @@ function App() {
           }
         />
 
-
-        {/* FORMULAIRE */}
-
         <Route
           path="/formulaire-service"
           element={
             <FormulaireService />
           }
         />
-
-
-        {/* PAGE INEXISTANTE */}
 
         <Route
           path="*"
@@ -1153,6 +1104,7 @@ function App() {
     </>
 
   );
+
 }
 
 
