@@ -1471,8 +1471,8 @@ main {
   =================================================== */
 
   .email-icon {
-    font-size: 38px !important;
-    margin-bottom: 42px !important;
+    font-size: 25px !important;
+    margin-bottom: 10px !important;
   }
 
   .contact-item h3 {
@@ -1677,7 +1677,7 @@ main {
   =================================================== */
 
   .email-icon {
-    font-size: 35px !important;
-    margin-bottom: 39px !important;
+    font-size: 25px !important;
+    margin-bottom: 25px !important;
   }
 }
