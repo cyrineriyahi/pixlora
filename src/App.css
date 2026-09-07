@@ -1466,9 +1466,13 @@ main {
     margin-bottom: 10px;
   }
 
+  /* ===================================================
+     EMAIL MOBILE - CORRECTION
+  =================================================== */
+
   .email-icon {
-    font-size: 100px;
-    margin-bottom: 20px;
+    font-size: 23px !important;
+    margin-bottom: 10px !important;
   }
 
   .contact-item h3 {
@@ -1668,8 +1672,12 @@ main {
     background: #ffffff;
   }
 
+  /* ===================================================
+     EMAIL - PETITS TÉLÉPHONES
+  =================================================== */
+
   .email-icon {
-    font-size: 100px;
-    margin-bottom: 20px;
+    font-size: 21px !important;
+    margin-bottom: 10px !important;
   }
 }
