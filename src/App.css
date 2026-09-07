@@ -280,7 +280,8 @@ section {
     #4f9cff
   );
 
-  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.2);
+  box-shadow:
+    0 10px 25px rgba(139, 92, 246, 0.2);
 }
 
 .primary-button:hover {
@@ -879,7 +880,6 @@ section {
 
 /* =====================================================
    CONTACT ICONS
-   Même boîte pour toutes les icônes
 ===================================================== */
 
 .contact-icon {
@@ -893,17 +893,27 @@ section {
   justify-content: center;
 }
 
-
-/*
-   Toutes les icônes Font Awesome
-   ont la même zone de rendu.
-*/
-
 .contact-icon svg {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
 
   display: block;
+}
+
+
+/* =====================================================
+   EMAIL ICON
+===================================================== */
+
+/*
+   La vraie icône enveloppe Font Awesome.
+   Elle utilise exactement le même conteneur
+   que les autres icônes.
+*/
+
+.email-icon svg {
+  width: 32px;
+  height: 32px;
 }
 
 
@@ -1144,6 +1154,11 @@ section {
     display: block;
   }
 
+  .email-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
   .contact-item h3 {
     font-size: 15px;
   }
@@ -1210,6 +1225,9 @@ section {
   .logo span {
     font-size: 20px;
   }
+
+
+  /* HERO */
 
   .hero {
     padding: 110px 5% 70px;
@@ -1305,6 +1323,11 @@ section {
   }
 
   .contact-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .email-icon svg {
     width: 24px;
     height: 24px;
   }

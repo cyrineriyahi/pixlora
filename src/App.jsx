@@ -117,9 +117,7 @@ function Accueil() {
 
     <main>
 
-      {/* =================================================
-          HERO
-      ================================================= */}
+      {/* HERO */}
 
       <section className="hero">
 
@@ -139,7 +137,6 @@ function Accueil() {
             modernes.
           </p>
 
-
           <div className="hero-buttons">
 
             <button
@@ -147,9 +144,7 @@ function Accueil() {
               onClick={() => {
 
                 const services =
-                  document.getElementById(
-                    "services"
-                  );
+                  document.getElementById("services");
 
                 if (services) {
 
@@ -165,13 +160,10 @@ function Accueil() {
               Découvrir nos services
             </button>
 
-
             <button
               className="secondary-button"
               onClick={() =>
-                navigate(
-                  "/formulaire-service"
-                )
+                navigate("/formulaire-service")
               }
             >
               Nous contacter
@@ -180,11 +172,6 @@ function Accueil() {
           </div>
 
         </div>
-
-
-        {/* =================================================
-            HERO IMAGE
-        ================================================= */}
 
         <div className="hero-visual">
 
@@ -199,9 +186,7 @@ function Accueil() {
       </section>
 
 
-      {/* =====================================================
-          PORTFOLIO
-      ===================================================== */}
+      {/* PORTFOLIO */}
 
       <section
         className="portfolio-section"
@@ -229,7 +214,6 @@ function Accueil() {
 
           </div>
 
-
           <div className="portfolio-controls">
 
             <button
@@ -256,27 +240,20 @@ function Accueil() {
 
         </div>
 
-
         <div className="portfolio-grid">
-
-
-          {/* PROJET 1 */}
 
           <div className="portfolio-card">
 
             <div className="portfolio-image">
-
               <img
                 src={heroPhoto}
                 alt="Vidéo publicitaire"
               />
-
             </div>
 
             <div className="portfolio-content">
 
               <div>
-
                 <h3>
                   Vidéo publicitaire
                 </h3>
@@ -284,7 +261,6 @@ function Accueil() {
                 <p>
                   Création de contenu pour marque
                 </p>
-
               </div>
 
               <div className="portfolio-arrow">
@@ -296,23 +272,18 @@ function Accueil() {
           </div>
 
 
-          {/* PROJET 2 */}
-
           <div className="portfolio-card">
 
             <div className="portfolio-image">
-
               <img
                 src={heroPhoto}
                 alt="Contenu Instagram"
               />
-
             </div>
 
             <div className="portfolio-content">
 
               <div>
-
                 <h3>
                   Contenu Instagram
                 </h3>
@@ -320,7 +291,6 @@ function Accueil() {
                 <p>
                   Vidéo courte et dynamique
                 </p>
-
               </div>
 
               <div className="portfolio-arrow">
@@ -332,23 +302,18 @@ function Accueil() {
           </div>
 
 
-          {/* PROJET 3 */}
-
           <div className="portfolio-card">
 
             <div className="portfolio-image">
-
               <img
                 src={heroPhoto}
                 alt="Présentation produit"
               />
-
             </div>
 
             <div className="portfolio-content">
 
               <div>
-
                 <h3>
                   Présentation produit
                 </h3>
@@ -356,7 +321,6 @@ function Accueil() {
                 <p>
                   Présentez votre produit autrement
                 </p>
-
               </div>
 
               <div className="portfolio-arrow">
@@ -368,23 +332,18 @@ function Accueil() {
           </div>
 
 
-          {/* PROJET 4 */}
-
           <div className="portfolio-card">
 
             <div className="portfolio-image">
-
               <img
                 src={heroPhoto}
                 alt="Vidéo promotionnelle"
               />
-
             </div>
 
             <div className="portfolio-content">
 
               <div>
-
                 <h3>
                   Vidéo promotionnelle
                 </h3>
@@ -392,7 +351,6 @@ function Accueil() {
                 <p>
                   Contenu moderne et professionnel
                 </p>
-
               </div>
 
               <div className="portfolio-arrow">
@@ -404,23 +362,18 @@ function Accueil() {
           </div>
 
 
-          {/* PROJET 5 */}
-
           <div className="portfolio-card">
 
             <div className="portfolio-image">
-
               <img
                 src={heroPhoto}
                 alt="Contenu TikTok"
               />
-
             </div>
 
             <div className="portfolio-content">
 
               <div>
-
                 <h3>
                   Contenu TikTok
                 </h3>
@@ -428,7 +381,6 @@ function Accueil() {
                 <p>
                   Format vertical pour les réseaux
                 </p>
-
               </div>
 
               <div className="portfolio-arrow">
@@ -440,23 +392,18 @@ function Accueil() {
           </div>
 
 
-          {/* PROJET 6 */}
-
           <div className="portfolio-card">
 
             <div className="portfolio-image">
-
               <img
                 src={heroPhoto}
                 alt="Création vidéo avec IA"
               />
-
             </div>
 
             <div className="portfolio-content">
 
               <div>
-
                 <h3>
                   Création vidéo avec IA
                 </h3>
@@ -464,7 +411,6 @@ function Accueil() {
                 <p>
                   Des contenus créatifs grâce à l'IA
                 </p>
-
               </div>
 
               <div className="portfolio-arrow">
@@ -475,15 +421,12 @@ function Accueil() {
 
           </div>
 
-
         </div>
 
       </section>
 
 
-      {/* =================================================
-          SERVICES
-      ================================================= */}
+      {/* SERVICES */}
 
       <section
         className="services-preview"
@@ -499,18 +442,12 @@ function Accueil() {
           <span>magnifique.</span>
         </h2>
 
-
         <div className="services-grid">
-
-
-          {/* DESIGN GRAPHIQUE */}
 
           <div
             className="service-card"
             onClick={() =>
-              navigate(
-                "/design-graphique"
-              )
+              navigate("/design-graphique")
             }
           >
 
@@ -533,9 +470,7 @@ function Accueil() {
 
                 e.stopPropagation();
 
-                navigate(
-                  "/design-graphique"
-                );
+                navigate("/design-graphique");
 
               }}
             >
@@ -545,14 +480,10 @@ function Accueil() {
           </div>
 
 
-          {/* MONTAGE VIDEO */}
-
           <div
             className="service-card"
             onClick={() =>
-              navigate(
-                "/montage-video"
-              )
+              navigate("/montage-video")
             }
           >
 
@@ -575,9 +506,7 @@ function Accueil() {
 
                 e.stopPropagation();
 
-                navigate(
-                  "/montage-video"
-                );
+                navigate("/montage-video");
 
               }}
             >
@@ -587,14 +516,10 @@ function Accueil() {
           </div>
 
 
-          {/* CREATION SITE */}
-
           <div
             className="service-card"
             onClick={() =>
-              navigate(
-                "/creation-site"
-              )
+              navigate("/creation-site")
             }
           >
 
@@ -616,9 +541,7 @@ function Accueil() {
 
                 e.stopPropagation();
 
-                navigate(
-                  "/creation-site"
-                );
+                navigate("/creation-site");
 
               }}
             >
@@ -628,14 +551,10 @@ function Accueil() {
           </div>
 
 
-          {/* PRODUIT DIGITAL */}
-
           <div
             className="service-card"
             onClick={() =>
-              navigate(
-                "/produit-digital"
-              )
+              navigate("/produit-digital")
             }
           >
 
@@ -657,9 +576,7 @@ function Accueil() {
 
                 e.stopPropagation();
 
-                navigate(
-                  "/produit-digital"
-                );
+                navigate("/produit-digital");
 
               }}
             >
@@ -669,14 +586,10 @@ function Accueil() {
           </div>
 
 
-          {/* CREATION IA */}
-
           <div
             className="service-card"
             onClick={() =>
-              navigate(
-                "/creation-ia"
-              )
+              navigate("/creation-ia")
             }
           >
 
@@ -699,9 +612,7 @@ function Accueil() {
 
                 e.stopPropagation();
 
-                navigate(
-                  "/creation-ia"
-                );
+                navigate("/creation-ia");
 
               }}
             >
@@ -715,9 +626,7 @@ function Accueil() {
       </section>
 
 
-      {/* =================================================
-          À PROPOS
-      ================================================= */}
+      {/* À PROPOS */}
 
       <section
         className="about-section"
@@ -763,9 +672,7 @@ function Accueil() {
       </section>
 
 
-      {/* =================================================
-          CONTACT
-      ================================================= */}
+      {/* CONTACT */}
 
       <section
         className="contact-section"
@@ -786,7 +693,6 @@ function Accueil() {
           de votre projet.
         </p>
 
-
         <div className="contact-info">
 
 
@@ -802,7 +708,7 @@ function Accueil() {
             }}
           >
 
-            <div className="contact-icon">
+            <div className="contact-icon email-icon">
 
               <FontAwesomeIcon
                 icon={faEnvelope}
@@ -985,7 +891,6 @@ function Accueil() {
 
           </div>
 
-
         </div>
 
       </section>
@@ -1106,6 +1011,5 @@ function App() {
   );
 
 }
-
 
 export default App;
