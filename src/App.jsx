@@ -1,3 +1,4 @@
+
 import {
   Routes,
   Route,
@@ -6,7 +7,7 @@ import {
   useLocation
 } from "react-router-dom";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -41,6 +42,12 @@ function Accueil() {
 
   const navigate = useNavigate();
   const location = useLocation();
+
+  /* =====================================================
+     PHOTO / VIDEO SÉLECTIONNÉE
+  ===================================================== */
+
+  const [selectedMedia, setSelectedMedia] = useState(null);
 
 
   /* =====================================================
@@ -103,19 +110,59 @@ function Accueil() {
       : 330;
 
     container.scrollBy({
+
       left:
         direction === "left"
           ? -cardWidth
           : cardWidth,
+
       behavior: "smooth"
+
     });
 
   };
 
 
+  /* =====================================================
+     FERMER PHOTO / VIDEO AVEC ESC
+  ===================================================== */
+
+  useEffect(() => {
+
+    const handleKeyDown = (event) => {
+
+      if (
+        event.key === "Escape" &&
+        selectedMedia
+      ) {
+
+        setSelectedMedia(null);
+
+      }
+
+    };
+
+    document.addEventListener(
+      "keydown",
+      handleKeyDown
+    );
+
+    return () => {
+
+      document.removeEventListener(
+        "keydown",
+        handleKeyDown
+      );
+
+    };
+
+  }, [selectedMedia]);
+
+
   return (
 
     <main>
+
 
       {/* =================================================
           HERO
@@ -129,9 +176,11 @@ function Accueil() {
             CRÉATIVITÉ • DESIGN • DIGITAL
           </p>
 
+
           <h1>
             Donnez vie à vos <span>idées.</span>
           </h1>
+
 
           <p className="hero-description">
             Pixlora transforme vos idées en créations
@@ -199,6 +248,7 @@ function Accueil() {
       </section>
 
 
+
       {/* =====================================================
           PORTFOLIO
       ===================================================== */}
@@ -208,6 +258,11 @@ function Accueil() {
         id="portfolio"
       >
 
+
+        {/* =================================================
+            HEADER PORTFOLIO
+        ================================================= */}
+
         <div className="portfolio-header">
 
           <div className="portfolio-title">
@@ -216,10 +271,12 @@ function Accueil() {
               NOS RÉALISATIONS
             </p>
 
+
             <h2>
               Des créations qui donnent vie
               à vos <span>idées.</span>
             </h2>
+
 
             <p className="portfolio-description">
               Découvrez quelques exemples de contenus
@@ -229,6 +286,10 @@ function Accueil() {
 
           </div>
 
+
+          {/* =================================================
+              BOUTONS PORTFOLIO
+          ================================================= */}
 
           <div className="portfolio-controls">
 
@@ -241,6 +302,7 @@ function Accueil() {
             >
               ←
             </button>
+
 
             <button
               className="portfolio-control"
@@ -257,38 +319,103 @@ function Accueil() {
         </div>
 
 
+
+        {/* =================================================
+            PORTFOLIO GRID
+        ================================================= */}
+
         <div className="portfolio-grid">
 
 
-          {/* PROJET 1 */}
+          {/* =================================================
+              PHOTO 1 — CHARTE GRAPHIQUE
+          ================================================= */}
 
-          <div className="portfolio-card">
+          <div
+            className="portfolio-card"
+            onClick={() =>
+              setSelectedMedia({
+                type: "image",
+                src: "/charte graphique pixlora.png",
+                title: "Charte graphique Pixlora"
+              })
+            }
+          >
 
             <div className="portfolio-image">
 
               <img
-                src={heroPhoto}
-                alt="Vidéo publicitaire"
+                src="/charte graphique pixlora.png"
+                alt="Charte graphique Pixlora"
               />
 
             </div>
+
 
             <div className="portfolio-content">
 
               <div>
 
                 <h3>
+                  Charte graphique Pixlora
+                </h3>
+
+                <p>
+                  Création graphique
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          {/* =================================================
+              VIDEO 1 — CASQUE JBL
+          ================================================= */}
+
+          <div
+            className="portfolio-card video-card"
+            onClick={() =>
+              setSelectedMedia({
+                type: "video",
+                src: "/casque JBL .mp4",
+                title: "Casque JBL"
+              })
+            }
+          >
+
+            <div className="portfolio-image">
+
+              <video
+                src="/casque JBL .mp4"
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              />
+
+              <div className="video-play-button">
+                ▶
+              </div>
+
+            </div>
+
+
+            <div className="portfolio-content">
+
+              <div>
+
+                <h3>
+                  Casque JBL
+                </h3>
+
+                <p>
                   Vidéo publicitaire
-                </h3>
-
-                <p>
-                  Création de contenu pour marque
                 </p>
 
-              </div>
-
-              <div className="portfolio-arrow">
-                →
               </div>
 
             </div>
@@ -296,71 +423,44 @@ function Accueil() {
           </div>
 
 
-          {/* PROJET 2 */}
 
-          <div className="portfolio-card">
+          {/* =================================================
+              PHOTO 2 — COUVERT
+          ================================================= */}
+
+          <div
+            className="portfolio-card"
+            onClick={() =>
+              setSelectedMedia({
+                type: "image",
+                src: "/couvert.jpg",
+                title: "Couvert"
+              })
+            }
+          >
 
             <div className="portfolio-image">
 
               <img
-                src={heroPhoto}
-                alt="Contenu Instagram"
+                src="/couvert.jpg"
+                alt="Couvert"
               />
 
             </div>
+
 
             <div className="portfolio-content">
 
               <div>
 
                 <h3>
-                  Contenu Instagram
+                  Couvert
                 </h3>
 
                 <p>
-                  Vidéo courte et dynamique
-                </p>
-
-              </div>
-
-              <div className="portfolio-arrow">
-                →
-              </div>
-
-            </div>
-
-          </div>
-
-
-          {/* PROJET 3 */}
-
-          <div className="portfolio-card">
-
-            <div className="portfolio-image">
-
-              <img
-                src={heroPhoto}
-                alt="Présentation produit"
-              />
-
-            </div>
-
-            <div className="portfolio-content">
-
-              <div>
-
-                <h3>
                   Présentation produit
-                </h3>
-
-                <p>
-                  Présentez votre produit autrement
                 </p>
 
-              </div>
-
-              <div className="portfolio-arrow">
-                →
               </div>
 
             </div>
@@ -368,35 +468,51 @@ function Accueil() {
           </div>
 
 
-          {/* PROJET 4 */}
 
-          <div className="portfolio-card">
+          {/* =================================================
+              VIDEO 2 — SPOT CAFÉ BEN YEDDER
+          ================================================= */}
+
+          <div
+            className="portfolio-card video-card"
+            onClick={() =>
+              setSelectedMedia({
+                type: "video",
+                src: "/Spot café Ben yedder.mp4",
+                title: "Spot café Ben Yedder"
+              })
+            }
+          >
 
             <div className="portfolio-image">
 
-              <img
-                src={heroPhoto}
-                alt="Vidéo promotionnelle"
+              <video
+                src="/Spot café Ben yedder.mp4"
+                muted
+                loop
+                playsInline
+                preload="metadata"
               />
 
+              <div className="video-play-button">
+                ▶
+              </div>
+
             </div>
+
 
             <div className="portfolio-content">
 
               <div>
 
                 <h3>
+                  Spot café Ben Yedder
+                </h3>
+
+                <p>
                   Vidéo promotionnelle
-                </h3>
-
-                <p>
-                  Contenu moderne et professionnel
                 </p>
 
-              </div>
-
-              <div className="portfolio-arrow">
-                →
               </div>
 
             </div>
@@ -404,35 +520,44 @@ function Accueil() {
           </div>
 
 
-          {/* PROJET 5 */}
 
-          <div className="portfolio-card">
+          {/* =================================================
+              PHOTO 3 — DELIVERY
+          ================================================= */}
+
+          <div
+            className="portfolio-card"
+            onClick={() =>
+              setSelectedMedia({
+                type: "image",
+                src: "/Delivery.png",
+                title: "Delivery"
+              })
+            }
+          >
 
             <div className="portfolio-image">
 
               <img
-                src={heroPhoto}
-                alt="Contenu TikTok"
+                src="/Delivery.png"
+                alt="Delivery"
               />
 
             </div>
+
 
             <div className="portfolio-content">
 
               <div>
 
                 <h3>
-                  Contenu TikTok
+                  Delivery
                 </h3>
 
                 <p>
-                  Format vertical pour les réseaux
+                  Contenu pour réseaux sociaux
                 </p>
 
-              </div>
-
-              <div className="portfolio-arrow">
-                →
               </div>
 
             </div>
@@ -440,35 +565,51 @@ function Accueil() {
           </div>
 
 
-          {/* PROJET 6 */}
 
-          <div className="portfolio-card">
+          {/* =================================================
+              VIDEO 3 — OIL LIP ESSANCE
+          ================================================= */}
+
+          <div
+            className="portfolio-card video-card"
+            onClick={() =>
+              setSelectedMedia({
+                type: "video",
+                src: "/Spot oil  lip essance.mp4",
+                title: "Spot Oil Lip Essance"
+              })
+            }
+          >
 
             <div className="portfolio-image">
 
-              <img
-                src={heroPhoto}
-                alt="Création vidéo avec IA"
+              <video
+                src="/Spot oil  lip essance.mp4"
+                muted
+                loop
+                playsInline
+                preload="metadata"
               />
 
+              <div className="video-play-button">
+                ▶
+              </div>
+
             </div>
+
 
             <div className="portfolio-content">
 
               <div>
 
                 <h3>
-                  Création vidéo avec IA
+                  Spot Oil Lip Essance
                 </h3>
 
                 <p>
-                  Des contenus créatifs grâce à l'IA
+                  Création vidéo
                 </p>
 
-              </div>
-
-              <div className="portfolio-arrow">
-                →
               </div>
 
             </div>
@@ -478,7 +619,80 @@ function Accueil() {
 
         </div>
 
+
+
+        {/* =================================================
+            MODAL PHOTO / VIDEO
+        ================================================= */}
+
+        {selectedMedia && (
+
+          <div
+            className="video-modal"
+            onClick={() =>
+              setSelectedMedia(null)
+            }
+          >
+
+            <div
+              className="video-modal-content"
+              onClick={(e) =>
+                e.stopPropagation()
+              }
+            >
+
+              {/* BOUTON FERMER */}
+
+              <button
+                className="video-modal-close"
+                onClick={() =>
+                  setSelectedMedia(null)
+                }
+                aria-label="Fermer"
+              >
+                ×
+              </button>
+
+
+              {/* =================================================
+                  PHOTO EN GRAND
+              ================================================= */}
+
+              {selectedMedia.type === "image" && (
+
+                <img
+                  src={selectedMedia.src}
+                  alt={selectedMedia.title}
+                  className="media-modal-image"
+                />
+
+              )}
+
+
+              {/* =================================================
+                  VIDEO EN GRAND
+              ================================================= */}
+
+              {selectedMedia.type === "video" && (
+
+                <video
+                  src={selectedMedia.src}
+                  controls
+                  autoPlay
+                  playsInline
+                  className="media-modal-video"
+                />
+
+              )}
+
+            </div>
+
+          </div>
+
+        )}
+
       </section>
+
 
 
       {/* =================================================
@@ -493,6 +707,7 @@ function Accueil() {
         <p className="section-subtitle">
           NOS SERVICES
         </p>
+
 
         <h2>
           Créons quelque chose de{" "}
@@ -518,15 +733,18 @@ function Accueil() {
               🎨
             </div>
 
+
             <h3>
               Design graphique
             </h3>
+
 
             <p>
               Création de logos, affiches,
               identités visuelles et supports
               graphiques.
             </p>
+
 
             <button
               onClick={(e) => {
@@ -545,6 +763,7 @@ function Accueil() {
           </div>
 
 
+
           {/* MONTAGE VIDEO */}
 
           <div
@@ -560,15 +779,18 @@ function Accueil() {
               🎬
             </div>
 
+
             <h3>
               Montage vidéo
             </h3>
+
 
             <p>
               Création et montage de vidéos
               modernes pour vos projets et
               réseaux sociaux.
             </p>
+
 
             <button
               onClick={(e) => {
@@ -587,6 +809,7 @@ function Accueil() {
           </div>
 
 
+
           {/* CREATION SITE */}
 
           <div
@@ -602,14 +825,17 @@ function Accueil() {
               💻
             </div>
 
+
             <h3>
               Création de site
             </h3>
+
 
             <p>
               Création de sites web modernes,
               rapides et adaptés à vos besoins.
             </p>
+
 
             <button
               onClick={(e) => {
@@ -628,6 +854,7 @@ function Accueil() {
           </div>
 
 
+
           {/* PRODUIT DIGITAL */}
 
           <div
@@ -643,14 +870,17 @@ function Accueil() {
               📱
             </div>
 
+
             <h3>
               Produit digital
             </h3>
+
 
             <p>
               Création de produits digitaux
               modernes et adaptés à votre activité.
             </p>
+
 
             <button
               onClick={(e) => {
@@ -669,6 +899,7 @@ function Accueil() {
           </div>
 
 
+
           {/* CREATION IA */}
 
           <div
@@ -684,15 +915,18 @@ function Accueil() {
               🤖
             </div>
 
+
             <h3>
               Création avec IA
             </h3>
+
 
             <p>
               Création de contenus et visuels
               modernes grâce aux outils
               d'intelligence artificielle.
             </p>
+
 
             <button
               onClick={(e) => {
@@ -710,9 +944,11 @@ function Accueil() {
 
           </div>
 
+
         </div>
 
       </section>
+
 
 
       {/* =================================================
@@ -728,16 +964,20 @@ function Accueil() {
           À PROPOS
         </p>
 
+
         <h2>
           À propos de <span>Pixlora</span>
         </h2>
 
+
         <p className="about-description">
 
-          <strong>Pixlora</strong> est une agence
-          créative qui aide les marques,
-          entrepreneurs et créateurs à développer
-          leur image grâce au{" "}
+          <strong>
+            Pixlora
+          </strong>{" "}
+          est une agence créative qui aide les
+          marques, entrepreneurs et créateurs à
+          développer leur image grâce au{" "}
 
           <strong>
             design, à la vidéo et aux solutions
@@ -745,6 +985,7 @@ function Accueil() {
           </strong>
 
         </p>
+
 
         <p className="about-description">
 
@@ -756,11 +997,13 @@ function Accueil() {
 
         </p>
 
+
         <p className="about-slogan">
           Creative Solutions for Your Growth.
         </p>
 
       </section>
+
 
 
       {/* =================================================
@@ -776,15 +1019,18 @@ function Accueil() {
           CONTACT
         </p>
 
+
         <h2>
           Parlons de votre <span>projet.</span>
         </h2>
+
 
         <p className="contact-description">
           Vous avez un projet ou une idée ?
           Contactez-nous et discutons ensemble
           de votre projet.
         </p>
+
 
 
         <div className="contact-info">
@@ -810,9 +1056,11 @@ function Accueil() {
 
             </div>
 
+
             <h3>
               Email
             </h3>
+
 
             <a
               href="mailto:pixlora26@gmail.com"
@@ -824,6 +1072,7 @@ function Accueil() {
             </a>
 
           </div>
+
 
 
           {/* WHATSAPP */}
@@ -848,9 +1097,11 @@ function Accueil() {
 
             </div>
 
+
             <h3>
               WhatsApp
             </h3>
+
 
             <a
               href="https://wa.me/21620898688"
@@ -864,6 +1115,7 @@ function Accueil() {
             </a>
 
           </div>
+
 
 
           {/* FACEBOOK */}
@@ -888,9 +1140,11 @@ function Accueil() {
 
             </div>
 
+
             <h3>
               Facebook
             </h3>
+
 
             <a
               href="https://www.facebook.com/profile.php?id=61592936854600"
@@ -904,6 +1158,7 @@ function Accueil() {
             </a>
 
           </div>
+
 
 
           {/* INSTAGRAM */}
@@ -928,9 +1183,11 @@ function Accueil() {
 
             </div>
 
+
             <h3>
               Instagram
             </h3>
+
 
             <a
               href="https://www.instagram.com/pixlora26/"
@@ -944,6 +1201,7 @@ function Accueil() {
             </a>
 
           </div>
+
 
 
           {/* TIKTOK */}
@@ -968,9 +1226,11 @@ function Accueil() {
 
             </div>
 
+
             <h3>
               TikTok
             </h3>
+
 
             <a
               href="https://www.tiktok.com/@pixlora26"
@@ -990,9 +1250,11 @@ function Accueil() {
 
       </section>
 
+
     </main>
 
   );
+
 }
 
 
@@ -1008,7 +1270,11 @@ function App() {
 
       <Navbar />
 
+
       <Routes>
+
+
+        {/* ACCUEIL */}
 
         <Route
           path="/"
@@ -1016,6 +1282,9 @@ function App() {
             <Accueil />
           }
         />
+
+
+        {/* À PROPOS */}
 
         <Route
           path="/about"
@@ -1027,6 +1296,9 @@ function App() {
           }
         />
 
+
+        {/* SERVICES */}
+
         <Route
           path="/services"
           element={
@@ -1036,6 +1308,9 @@ function App() {
             />
           }
         />
+
+
+        {/* CONTACT */}
 
         <Route
           path="/contact"
@@ -1047,12 +1322,18 @@ function App() {
           }
         />
 
+
+        {/* DESIGN GRAPHIQUE */}
+
         <Route
           path="/design-graphique"
           element={
             <DesignGraphique />
           }
         />
+
+
+        {/* MONTAGE VIDEO */}
 
         <Route
           path="/montage-video"
@@ -1061,12 +1342,18 @@ function App() {
           }
         />
 
+
+        {/* CREATION SITE */}
+
         <Route
           path="/creation-site"
           element={
             <CreationSite />
           }
         />
+
+
+        {/* PRODUIT DIGITAL */}
 
         <Route
           path="/produit-digital"
@@ -1075,6 +1362,9 @@ function App() {
           }
         />
 
+
+        {/* CREATION IA */}
+
         <Route
           path="/creation-ia"
           element={
@@ -1082,12 +1372,18 @@ function App() {
           }
         />
 
+
+        {/* FORMULAIRE SERVICE */}
+
         <Route
           path="/formulaire-service"
           element={
             <FormulaireService />
           }
         />
+
+
+        {/* PAGE INEXISTANTE */}
 
         <Route
           path="*"
@@ -1098,6 +1394,7 @@ function App() {
             />
           }
         />
+
 
       </Routes>
 
