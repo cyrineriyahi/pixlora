@@ -43,6 +43,7 @@ function Accueil() {
   const navigate = useNavigate();
   const location = useLocation();
 
+
   /* =====================================================
      PHOTO / VIDEO SÉLECTIONNÉE
   ===================================================== */
@@ -391,6 +392,7 @@ function Accueil() {
 
               <video
                 src="/casque JBL .mp4"
+                poster="/casque-jbl-cover.jpg"
                 muted
                 loop
                 playsInline
@@ -488,6 +490,7 @@ function Accueil() {
 
               <video
                 src="/Spot café Ben yedder.mp4"
+                poster="/cafe-cover.jpg"
                 muted
                 loop
                 playsInline
@@ -585,6 +588,7 @@ function Accueil() {
 
               <video
                 src="/Spot oil  lip essance.mp4"
+                poster="/oil-lip-cover.jpg"
                 muted
                 loop
                 playsInline
@@ -621,9 +625,9 @@ function Accueil() {
 
 
 
-        {/* =================================================
+        {/* =====================================================
             MODAL PHOTO / VIDEO
-        ================================================= */}
+        ===================================================== */}
 
         {selectedMedia && (
 
