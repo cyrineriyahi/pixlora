@@ -1,4 +1,3 @@
-
 import {
   Routes,
   Route,
@@ -43,16 +42,11 @@ function Accueil() {
   const navigate = useNavigate();
   const location = useLocation();
 
-
-  /* =====================================================
-     PHOTO / VIDEO SÉLECTIONNÉE
-  ===================================================== */
-
   const [selectedMedia, setSelectedMedia] = useState(null);
 
 
   /* =====================================================
-     SCROLL AUTOMATIQUE
+     SCROLL AUTOMATIQUE VERS UNE SECTION
   ===================================================== */
 
   useEffect(() => {
@@ -83,15 +77,13 @@ function Accueil() {
 
     }, 300);
 
-    return () => {
-      clearTimeout(timer);
-    };
+    return () => clearTimeout(timer);
 
   }, [location.search]);
 
 
   /* =====================================================
-     DÉFILEMENT PORTFOLIO
+     DÉFILEMENT DU PORTFOLIO
   ===================================================== */
 
   const scrollPortfolio = (direction) => {
@@ -125,7 +117,7 @@ function Accueil() {
 
 
   /* =====================================================
-     FERMER PHOTO / VIDEO AVEC ESC
+     FERMER LE MODAL AVEC ESC
   ===================================================== */
 
   useEffect(() => {
@@ -219,9 +211,7 @@ function Accueil() {
             <button
               className="secondary-button"
               onClick={() =>
-                navigate(
-                  "/formulaire-service"
-                )
+                navigate("/formulaire-service")
               }
             >
               Nous contacter
@@ -231,10 +221,6 @@ function Accueil() {
 
         </div>
 
-
-        {/* =================================================
-            HERO IMAGE
-        ================================================= */}
 
         <div className="hero-visual">
 
@@ -287,10 +273,6 @@ function Accueil() {
 
           </div>
 
-
-          {/* =================================================
-              BOUTONS PORTFOLIO
-          ================================================= */}
 
           <div className="portfolio-controls">
 
@@ -375,6 +357,7 @@ function Accueil() {
 
           {/* =================================================
               VIDEO 1 — CASQUE JBL
+              IMAGE : casque jbl.jpg
           ================================================= */}
 
           <div
@@ -390,18 +373,10 @@ function Accueil() {
 
             <div className="portfolio-image">
 
-              <video
-                src="/casque JBL .mp4"
-                poster="/casque-jbl-cover.jpg"
-                muted
-                loop
-                playsInline
-                preload="metadata"
+              <img
+                src="/casque jbl.jpg"
+                alt="Casque JBL"
               />
-
-              <div className="video-play-button">
-                ▶
-              </div>
 
             </div>
 
@@ -472,7 +447,8 @@ function Accueil() {
 
 
           {/* =================================================
-              VIDEO 2 — SPOT CAFÉ BEN YEDDER
+              VIDEO 2 — BEN YEDER
+              IMAGE : ben yeder.jpg
           ================================================= */}
 
           <div
@@ -488,18 +464,10 @@ function Accueil() {
 
             <div className="portfolio-image">
 
-              <video
-                src="/Spot café Ben yedder.mp4"
-                poster="/cafe-cover.jpg"
-                muted
-                loop
-                playsInline
-                preload="metadata"
+              <img
+                src="/ben yeder.jpg"
+                alt="Spot café Ben Yedder"
               />
-
-              <div className="video-play-button">
-                ▶
-              </div>
 
             </div>
 
@@ -570,7 +538,8 @@ function Accueil() {
 
 
           {/* =================================================
-              VIDEO 3 — OIL LIP ESSANCE
+              VIDEO 3 — LIP OIL
+              IMAGE : lip oil.jpg
           ================================================= */}
 
           <div
@@ -586,18 +555,10 @@ function Accueil() {
 
             <div className="portfolio-image">
 
-              <video
-                src="/Spot oil  lip essance.mp4"
-                poster="/oil-lip-cover.jpg"
-                muted
-                loop
-                playsInline
-                preload="metadata"
+              <img
+                src="/lip oil.jpg"
+                alt="Spot Oil Lip Essance"
               />
-
-              <div className="video-play-button">
-                ▶
-              </div>
 
             </div>
 
@@ -645,7 +606,10 @@ function Accueil() {
               }
             >
 
-              {/* BOUTON FERMER */}
+
+              {/* =================================================
+                  BOUTON FERMER
+              ================================================= */}
 
               <button
                 className="video-modal-close"
@@ -658,8 +622,9 @@ function Accueil() {
               </button>
 
 
+
               {/* =================================================
-                  PHOTO EN GRAND
+                  PHOTO
               ================================================= */}
 
               {selectedMedia.type === "image" && (
@@ -673,8 +638,9 @@ function Accueil() {
               )}
 
 
+
               {/* =================================================
-                  VIDEO EN GRAND
+                  VIDEO
               ================================================= */}
 
               {selectedMedia.type === "video" && (
@@ -699,9 +665,9 @@ function Accueil() {
 
 
 
-      {/* =================================================
+      {/* =====================================================
           SERVICES
-      ================================================= */}
+      ===================================================== */}
 
       <section
         className="services-preview"
@@ -727,9 +693,7 @@ function Accueil() {
           <div
             className="service-card"
             onClick={() =>
-              navigate(
-                "/design-graphique"
-              )
+              navigate("/design-graphique")
             }
           >
 
@@ -755,9 +719,7 @@ function Accueil() {
 
                 e.stopPropagation();
 
-                navigate(
-                  "/design-graphique"
-                );
+                navigate("/design-graphique");
 
               }}
             >
@@ -773,9 +735,7 @@ function Accueil() {
           <div
             className="service-card"
             onClick={() =>
-              navigate(
-                "/montage-video"
-              )
+              navigate("/montage-video")
             }
           >
 
@@ -801,9 +761,7 @@ function Accueil() {
 
                 e.stopPropagation();
 
-                navigate(
-                  "/montage-video"
-                );
+                navigate("/montage-video");
 
               }}
             >
@@ -819,9 +777,7 @@ function Accueil() {
           <div
             className="service-card"
             onClick={() =>
-              navigate(
-                "/creation-site"
-              )
+              navigate("/creation-site")
             }
           >
 
@@ -846,9 +802,7 @@ function Accueil() {
 
                 e.stopPropagation();
 
-                navigate(
-                  "/creation-site"
-                );
+                navigate("/creation-site");
 
               }}
             >
@@ -864,9 +818,7 @@ function Accueil() {
           <div
             className="service-card"
             onClick={() =>
-              navigate(
-                "/produit-digital"
-              )
+              navigate("/produit-digital")
             }
           >
 
@@ -891,9 +843,7 @@ function Accueil() {
 
                 e.stopPropagation();
 
-                navigate(
-                  "/produit-digital"
-                );
+                navigate("/produit-digital");
 
               }}
             >
@@ -909,9 +859,7 @@ function Accueil() {
           <div
             className="service-card"
             onClick={() =>
-              navigate(
-                "/creation-ia"
-              )
+              navigate("/creation-ia")
             }
           >
 
@@ -937,9 +885,7 @@ function Accueil() {
 
                 e.stopPropagation();
 
-                navigate(
-                  "/creation-ia"
-                );
+                navigate("/creation-ia");
 
               }}
             >
@@ -955,9 +901,9 @@ function Accueil() {
 
 
 
-      {/* =================================================
+      {/* =====================================================
           À PROPOS
-      ================================================= */}
+      ===================================================== */}
 
       <section
         className="about-section"
@@ -1010,9 +956,9 @@ function Accueil() {
 
 
 
-      {/* =================================================
+      {/* =====================================================
           CONTACT
-      ================================================= */}
+      ===================================================== */}
 
       <section
         className="contact-section"
@@ -1034,7 +980,6 @@ function Accueil() {
           Contactez-nous et discutons ensemble
           de votre projet.
         </p>
-
 
 
         <div className="contact-info">
@@ -1278,17 +1223,11 @@ function App() {
       <Routes>
 
 
-        {/* ACCUEIL */}
-
         <Route
           path="/"
-          element={
-            <Accueil />
-          }
+          element={<Accueil />}
         />
 
-
-        {/* À PROPOS */}
 
         <Route
           path="/about"
@@ -1301,8 +1240,6 @@ function App() {
         />
 
 
-        {/* SERVICES */}
-
         <Route
           path="/services"
           element={
@@ -1313,8 +1250,6 @@ function App() {
           }
         />
 
-
-        {/* CONTACT */}
 
         <Route
           path="/contact"
@@ -1327,67 +1262,41 @@ function App() {
         />
 
 
-        {/* DESIGN GRAPHIQUE */}
-
         <Route
           path="/design-graphique"
-          element={
-            <DesignGraphique />
-          }
+          element={<DesignGraphique />}
         />
 
-
-        {/* MONTAGE VIDEO */}
 
         <Route
           path="/montage-video"
-          element={
-            <MontageVideo />
-          }
+          element={<MontageVideo />}
         />
 
-
-        {/* CREATION SITE */}
 
         <Route
           path="/creation-site"
-          element={
-            <CreationSite />
-          }
+          element={<CreationSite />}
         />
 
-
-        {/* PRODUIT DIGITAL */}
 
         <Route
           path="/produit-digital"
-          element={
-            <CreationProduitDigital />
-          }
+          element={<CreationProduitDigital />}
         />
 
-
-        {/* CREATION IA */}
 
         <Route
           path="/creation-ia"
-          element={
-            <CreationIA />
-          }
+          element={<CreationIA />}
         />
 
-
-        {/* FORMULAIRE SERVICE */}
 
         <Route
           path="/formulaire-service"
-          element={
-            <FormulaireService />
-          }
+          element={<FormulaireService />}
         />
 
-
-        {/* PAGE INEXISTANTE */}
 
         <Route
           path="*"
