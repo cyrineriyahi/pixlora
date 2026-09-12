@@ -112,7 +112,7 @@ function Navbar() {
 
         <div className="logo-text">
           <span className="logo-normal">
-            pi
+            Pi
           </span>
 
           <span className="logo-gradient">
