@@ -343,10 +343,6 @@ function Accueil() {
                   Charte graphique Pixlora
                 </h3>
 
-                <p>
-                  Création graphique
-                </p>
-
               </div>
 
             </div>
@@ -389,10 +385,6 @@ function Accueil() {
                   Casque JBL
                 </h3>
 
-                <p>
-                  Vidéo publicitaire
-                </p>
-
               </div>
 
             </div>
@@ -433,10 +425,6 @@ function Accueil() {
                 <h3>
                   Couvert
                 </h3>
-
-                <p>
-                  Présentation produit
-                </p>
 
               </div>
 
@@ -480,10 +468,6 @@ function Accueil() {
                   Spot café Ben Yedder
                 </h3>
 
-                <p>
-                  Vidéo promotionnelle
-                </p>
-
               </div>
 
             </div>
@@ -524,10 +508,6 @@ function Accueil() {
                 <h3>
                   Delivery
                 </h3>
-
-                <p>
-                  Contenu pour réseaux sociaux
-                </p>
 
               </div>
 
@@ -570,10 +550,6 @@ function Accueil() {
                 <h3>
                   Spot Oil Lip Essance
                 </h3>
-
-                <p>
-                  Création vidéo
-                </p>
 
               </div>
 
@@ -1223,11 +1199,15 @@ function App() {
       <Routes>
 
 
+        {/* ACCUEIL */}
+
         <Route
           path="/"
           element={<Accueil />}
         />
 
+
+        {/* À PROPOS */}
 
         <Route
           path="/about"
@@ -1240,6 +1220,8 @@ function App() {
         />
 
 
+        {/* SERVICES */}
+
         <Route
           path="/services"
           element={
@@ -1250,6 +1232,8 @@ function App() {
           }
         />
 
+
+        {/* CONTACT */}
 
         <Route
           path="/contact"
@@ -1262,11 +1246,15 @@ function App() {
         />
 
 
+        {/* DESIGN GRAPHIQUE */}
+
         <Route
           path="/design-graphique"
           element={<DesignGraphique />}
         />
 
+
+        {/* MONTAGE VIDEO */}
 
         <Route
           path="/montage-video"
@@ -1274,11 +1262,15 @@ function App() {
         />
 
 
+        {/* CREATION SITE */}
+
         <Route
           path="/creation-site"
           element={<CreationSite />}
         />
 
+
+        {/* PRODUIT DIGITAL */}
 
         <Route
           path="/produit-digital"
@@ -1286,17 +1278,23 @@ function App() {
         />
 
 
+        {/* CREATION IA */}
+
         <Route
           path="/creation-ia"
           element={<CreationIA />}
         />
 
 
+        {/* FORMULAIRE SERVICE */}
+
         <Route
           path="/formulaire-service"
           element={<FormulaireService />}
         />
 
+
+        {/* PAGE INEXISTANTE */}
 
         <Route
           path="*"
