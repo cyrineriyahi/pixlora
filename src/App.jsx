@@ -34,7 +34,7 @@ import heroPhoto from "./assets/accueil.jpg";
 
 
 /* =====================================================
-   PAGE ACCUEIL
+   ACCUEIL
 ===================================================== */
 
 function Accueil() {
@@ -46,7 +46,7 @@ function Accueil() {
 
 
   /* =====================================================
-     SCROLL AUTOMATIQUE VERS UNE SECTION
+     SCROLL AUTOMATIQUE
   ===================================================== */
 
   useEffect(() => {
@@ -57,9 +57,7 @@ function Accueil() {
 
     const section = params.get("section");
 
-    if (!section) {
-      return;
-    }
+    if (!section) return;
 
     const timer = setTimeout(() => {
 
@@ -83,7 +81,7 @@ function Accueil() {
 
 
   /* =====================================================
-     DÉFILEMENT DU PORTFOLIO
+     PORTFOLIO CAROUSEL
   ===================================================== */
 
   const scrollPortfolio = (direction) => {
@@ -91,16 +89,15 @@ function Accueil() {
     const container =
       document.querySelector(".portfolio-grid");
 
-    if (!container) {
-      return;
-    }
+    if (!container) return;
 
     const card =
       container.querySelector(".portfolio-card");
 
-    const cardWidth = card
-      ? card.offsetWidth + 24
-      : 330;
+    const cardWidth =
+      card
+        ? card.offsetWidth + 24
+        : 330;
 
     container.scrollBy({
 
@@ -117,7 +114,7 @@ function Accueil() {
 
 
   /* =====================================================
-     FERMER LE MODAL AVEC ESC
+     FERMER MODAL AVEC ESC
   ===================================================== */
 
   useEffect(() => {
@@ -157,9 +154,9 @@ function Accueil() {
     <main>
 
 
-      {/* =================================================
+      {/* =====================================================
           HERO
-      ================================================= */}
+      ===================================================== */}
 
       <section className="hero">
 
@@ -169,18 +166,15 @@ function Accueil() {
             CRÉATIVITÉ • DESIGN • DIGITAL
           </p>
 
-
           <h1>
             Donnez vie à vos <span>idées.</span>
           </h1>
-
 
           <p className="hero-description">
             Pixlora transforme vos idées en créations
             visuelles, produits digitaux et expériences
             modernes.
           </p>
-
 
           <div className="hero-buttons">
 
@@ -245,11 +239,6 @@ function Accueil() {
         id="portfolio"
       >
 
-
-        {/* =================================================
-            HEADER PORTFOLIO
-        ================================================= */}
-
         <div className="portfolio-header">
 
           <div className="portfolio-title">
@@ -258,12 +247,10 @@ function Accueil() {
               NOS RÉALISATIONS
             </p>
 
-
             <h2>
               Des créations qui donnent vie
               à vos <span>idées.</span>
             </h2>
-
 
             <p className="portfolio-description">
               Découvrez quelques exemples de contenus
@@ -303,15 +290,15 @@ function Accueil() {
 
 
 
-        {/* =================================================
-            PORTFOLIO GRID
-        ================================================= */}
+        {/* =====================================================
+            CARTES PORTFOLIO
+        ===================================================== */}
 
         <div className="portfolio-grid">
 
 
           {/* =================================================
-              PHOTO 1 — CHARTE GRAPHIQUE
+              1 — CHARTE GRAPHIQUE PIXLORA
           ================================================= */}
 
           <div
@@ -337,13 +324,9 @@ function Accueil() {
 
             <div className="portfolio-content">
 
-              <div>
-
-                <h3>
-                  Charte graphique Pixlora
-                </h3>
-
-              </div>
+              <h3>
+                Charte graphique Pixlora
+              </h3>
 
             </div>
 
@@ -352,8 +335,7 @@ function Accueil() {
 
 
           {/* =================================================
-              VIDEO 1 — CASQUE JBL
-              IMAGE : casque jbl.jpg
+              2 — CASQUE JBL
           ================================================= */}
 
           <div
@@ -379,13 +361,9 @@ function Accueil() {
 
             <div className="portfolio-content">
 
-              <div>
-
-                <h3>
-                  Casque JBL
-                </h3>
-
-              </div>
+              <h3>
+                Casque JBL
+              </h3>
 
             </div>
 
@@ -394,7 +372,7 @@ function Accueil() {
 
 
           {/* =================================================
-              PHOTO 2 — COUVERT
+              3 — COUVERT
           ================================================= */}
 
           <div
@@ -420,13 +398,9 @@ function Accueil() {
 
             <div className="portfolio-content">
 
-              <div>
-
-                <h3>
-                  Couvert
-                </h3>
-
-              </div>
+              <h3>
+                Couvert
+              </h3>
 
             </div>
 
@@ -435,8 +409,7 @@ function Accueil() {
 
 
           {/* =================================================
-              VIDEO 2 — BEN YEDER
-              IMAGE : ben yeder.jpg
+              4 — SPOT CAFÉ BEN YEDDER
           ================================================= */}
 
           <div
@@ -462,13 +435,9 @@ function Accueil() {
 
             <div className="portfolio-content">
 
-              <div>
-
-                <h3>
-                  Spot café Ben Yedder
-                </h3>
-
-              </div>
+              <h3>
+                Spot café Ben Yedder
+              </h3>
 
             </div>
 
@@ -477,7 +446,7 @@ function Accueil() {
 
 
           {/* =================================================
-              PHOTO 3 — DELIVERY
+              5 — DELIVERY
           ================================================= */}
 
           <div
@@ -503,13 +472,9 @@ function Accueil() {
 
             <div className="portfolio-content">
 
-              <div>
-
-                <h3>
-                  Delivery
-                </h3>
-
-              </div>
+              <h3>
+                Delivery
+              </h3>
 
             </div>
 
@@ -518,8 +483,7 @@ function Accueil() {
 
 
           {/* =================================================
-              VIDEO 3 — LIP OIL
-              IMAGE : lip oil.jpg
+              6 — SPOT OIL LIP ESSANCE
           ================================================= */}
 
           <div
@@ -545,13 +509,9 @@ function Accueil() {
 
             <div className="portfolio-content">
 
-              <div>
-
-                <h3>
-                  Spot Oil Lip Essance
-                </h3>
-
-              </div>
+              <h3>
+                Spot Oil Lip Essance
+              </h3>
 
             </div>
 
@@ -563,7 +523,7 @@ function Accueil() {
 
 
         {/* =====================================================
-            MODAL PHOTO / VIDEO
+            MODAL
         ===================================================== */}
 
         {selectedMedia && (
@@ -582,11 +542,6 @@ function Accueil() {
               }
             >
 
-
-              {/* =================================================
-                  BOUTON FERMER
-              ================================================= */}
-
               <button
                 className="video-modal-close"
                 onClick={() =>
@@ -598,11 +553,6 @@ function Accueil() {
               </button>
 
 
-
-              {/* =================================================
-                  PHOTO
-              ================================================= */}
-
               {selectedMedia.type === "image" && (
 
                 <img
@@ -613,11 +563,6 @@ function Accueil() {
 
               )}
 
-
-
-              {/* =================================================
-                  VIDEO
-              ================================================= */}
 
               {selectedMedia.type === "video" && (
 
@@ -654,7 +599,6 @@ function Accueil() {
           NOS SERVICES
         </p>
 
-
         <h2>
           Créons quelque chose de{" "}
           <span>magnifique.</span>
@@ -677,18 +621,15 @@ function Accueil() {
               🎨
             </div>
 
-
             <h3>
               Design graphique
             </h3>
-
 
             <p>
               Création de logos, affiches,
               identités visuelles et supports
               graphiques.
             </p>
-
 
             <button
               onClick={(e) => {
@@ -719,18 +660,15 @@ function Accueil() {
               🎬
             </div>
 
-
             <h3>
               Montage vidéo
             </h3>
-
 
             <p>
               Création et montage de vidéos
               modernes pour vos projets et
               réseaux sociaux.
             </p>
-
 
             <button
               onClick={(e) => {
@@ -761,17 +699,14 @@ function Accueil() {
               💻
             </div>
 
-
             <h3>
               Création de site
             </h3>
-
 
             <p>
               Création de sites web modernes,
               rapides et adaptés à vos besoins.
             </p>
-
 
             <button
               onClick={(e) => {
@@ -802,17 +737,14 @@ function Accueil() {
               📱
             </div>
 
-
             <h3>
               Produit digital
             </h3>
-
 
             <p>
               Création de produits digitaux
               modernes et adaptés à votre activité.
             </p>
-
 
             <button
               onClick={(e) => {
@@ -843,18 +775,15 @@ function Accueil() {
               🤖
             </div>
 
-
             <h3>
               Création avec IA
             </h3>
-
 
             <p>
               Création de contenus et visuels
               modernes grâce aux outils
               d'intelligence artificielle.
             </p>
-
 
             <button
               onClick={(e) => {
@@ -869,7 +798,6 @@ function Accueil() {
             </button>
 
           </div>
-
 
         </div>
 
@@ -890,17 +818,13 @@ function Accueil() {
           À PROPOS
         </p>
 
-
         <h2>
           À propos de <span>Pixlora</span>
         </h2>
 
-
         <p className="about-description">
 
-          <strong>
-            Pixlora
-          </strong>{" "}
+          <strong>Pixlora</strong>{" "}
           est une agence créative qui aide les
           marques, entrepreneurs et créateurs à
           développer leur image grâce au{" "}
@@ -945,11 +869,9 @@ function Accueil() {
           CONTACT
         </p>
 
-
         <h2>
           Parlons de votre <span>projet.</span>
         </h2>
-
 
         <p className="contact-description">
           Vous avez un projet ou une idée ?
@@ -981,11 +903,9 @@ function Accueil() {
 
             </div>
 
-
             <h3>
               Email
             </h3>
-
 
             <a
               href="mailto:pixlora26@gmail.com"
@@ -1022,11 +942,9 @@ function Accueil() {
 
             </div>
 
-
             <h3>
               WhatsApp
             </h3>
-
 
             <a
               href="https://wa.me/21620898688"
@@ -1065,11 +983,9 @@ function Accueil() {
 
             </div>
 
-
             <h3>
               Facebook
             </h3>
-
 
             <a
               href="https://www.facebook.com/profile.php?id=61592936854600"
@@ -1108,11 +1024,9 @@ function Accueil() {
 
             </div>
 
-
             <h3>
               Instagram
             </h3>
-
 
             <a
               href="https://www.instagram.com/pixlora26/"
@@ -1151,11 +1065,9 @@ function Accueil() {
 
             </div>
 
-
             <h3>
               TikTok
             </h3>
-
 
             <a
               href="https://www.tiktok.com/@pixlora26"
@@ -1169,7 +1081,6 @@ function Accueil() {
             </a>
 
           </div>
-
 
         </div>
 
@@ -1195,19 +1106,12 @@ function App() {
 
       <Navbar />
 
-
       <Routes>
-
-
-        {/* ACCUEIL */}
 
         <Route
           path="/"
           element={<Accueil />}
         />
-
-
-        {/* À PROPOS */}
 
         <Route
           path="/about"
@@ -1219,9 +1123,6 @@ function App() {
           }
         />
 
-
-        {/* SERVICES */}
-
         <Route
           path="/services"
           element={
@@ -1231,9 +1132,6 @@ function App() {
             />
           }
         />
-
-
-        {/* CONTACT */}
 
         <Route
           path="/contact"
@@ -1245,56 +1143,35 @@ function App() {
           }
         />
 
-
-        {/* DESIGN GRAPHIQUE */}
-
         <Route
           path="/design-graphique"
           element={<DesignGraphique />}
         />
-
-
-        {/* MONTAGE VIDEO */}
 
         <Route
           path="/montage-video"
           element={<MontageVideo />}
         />
 
-
-        {/* CREATION SITE */}
-
         <Route
           path="/creation-site"
           element={<CreationSite />}
         />
-
-
-        {/* PRODUIT DIGITAL */}
 
         <Route
           path="/produit-digital"
           element={<CreationProduitDigital />}
         />
 
-
-        {/* CREATION IA */}
-
         <Route
           path="/creation-ia"
           element={<CreationIA />}
         />
 
-
-        {/* FORMULAIRE SERVICE */}
-
         <Route
           path="/formulaire-service"
           element={<FormulaireService />}
         />
-
-
-        {/* PAGE INEXISTANTE */}
 
         <Route
           path="*"
@@ -1306,7 +1183,6 @@ function App() {
           }
         />
 
-
       </Routes>
 
     </>
@@ -1314,6 +1190,5 @@ function App() {
   );
 
 }
-
 
 export default App;
