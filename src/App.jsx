@@ -325,7 +325,7 @@ function Accueil() {
             <div className="portfolio-content">
 
               <h3>
-                Charte graphique Pixlora
+               Création de logo & identité
               </h3>
 
             </div>
@@ -399,7 +399,7 @@ function Accueil() {
             <div className="portfolio-content">
 
               <h3>
-                Couvert
+               Banniéres & publicités e-commerce
               </h3>
 
             </div>
@@ -473,7 +473,7 @@ function Accueil() {
             <div className="portfolio-content">
 
               <h3>
-                Delivery
+               post réseaux sociaux
               </h3>
 
             </div>
